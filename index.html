@@ -1,0 +1,2311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D96KP0MXV9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D96KP0MXV9');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bodhi Wellness Club — Tu espacio de bienestar en la ciudad</title>
+  <meta name="description" content="Bodhi Wellness Club — Yoga, Barre, Mat Pilates, Masajes y más. San Telmo, Buenos Aires." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================
+       CSS VARIABLES & RESET
+    ============================================ */
+    :root {
+      --clay:     #C79B86;
+      --taupe:    #8A7A70;
+      --beige:    #EDE4DA;
+      --sand:     #D9C9B8;
+      --espresso: #3A2F2B;
+      --white:    #FAF7F4;
+
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans:  'DM Sans', sans-serif;
+
+      --radius: 14px;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--beige);
+      color: var(--espresso);
+      overflow-x: hidden;
+    }
+
+    img { display: block; width: 100%; object-fit: cover; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ============================================
+       LANGUAGE TOGGLE
+    ============================================ */
+    [data-lang="en"] { display: none; }
+
+    /* ============================================
+       NAVBAR
+    ============================================ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: transparent;
+      transition: background var(--transition), backdrop-filter var(--transition);
+    }
+
+    nav.scrolled {
+      background: rgba(237, 228, 218, 0.92);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(58,47,43,0.08);
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--espresso);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--espresso);
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .lang-toggle {
+      background: none;
+      border: 1px solid rgba(58,47,43,0.3);
+      border-radius: 20px;
+      padding: 0.3rem 0.85rem;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--espresso);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-toggle:hover {
+      background: var(--espresso);
+      color: var(--beige);
+    }
+
+    .nav-cta {
+      background: var(--espresso);
+      color: var(--beige) !important;
+      opacity: 1 !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 30px;
+      font-size: 0.75rem !important;
+      letter-spacing: 0.1em;
+      transition: background var(--transition) !important;
+    }
+
+    .nav-cta:hover { background: var(--clay) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--espresso);
+      transition: all 0.3s;
+    }
+
+    /* ============================================
+       MOBILE MENU
+    ============================================ */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--beige);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--espresso);
+      letter-spacing: 0.05em;
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--espresso);
+    }
+
+    /* ============================================
+       HERO
+    ============================================ */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: #3A2F2B;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      opacity: 0.75;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(58,47,43,0.65) 0%, rgba(58,47,43,0.1) 50%, transparent 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 3rem 5rem;
+      max-width: 780px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(237,228,218,0.7);
+      margin-bottom: 1.2rem;
+      font-weight: 400;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(237,228,218,0.8);
+      letter-spacing: 0.04em;
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--beige);
+      color: var(--espresso);
+      padding: 0.85rem 2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      transition: all var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      border: 1px solid rgba(237,228,218,0.5);
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(237,228,218,0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      right: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(237,228,218,0.5);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, transparent, rgba(237,228,218,0.4));
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    /* ============================================
+       SECTION COMMONS
+    ============================================ */
+    section { padding: 7rem 3rem; }
+
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--clay);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--espresso);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em { font-style: italic; }
+
+    /* Fade-in on scroll */
+    .fade-up {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ============================================
+       ABOUT
+    ============================================ */
+    .about {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--taupe);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .stat {
+      border-top: 1px solid var(--sand);
+      padding-top: 1.2rem;
+    }
+
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--clay);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      font-weight: 400;
+    }
+
+    .about-image-wrap {
+      position: relative;
+      height: 560px;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .about-image-wrap img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: 2rem;
+      left: -2rem;
+      background: var(--clay);
+      color: var(--white);
+      padding: 1.2rem 1.8rem;
+      border-radius: var(--radius);
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.4;
+      max-width: 200px;
+      box-shadow: 0 8px 30px rgba(58,47,43,0.15);
+    }
+
+    /* ============================================
+       CLASSES
+    ============================================ */
+    .classes { background: var(--beige); }
+
+    .classes-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3.5rem;
+    }
+
+    .classes-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .class-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--sand);
+      transition: transform var(--transition);
+      cursor: pointer;
+    }
+
+    .class-card:hover { transform: translateY(-6px); }
+
+    .class-card-img {
+      height: 380px !important;
+      overflow: hidden;
+      background: var(--sand);
+      position: relative;
+    }
+
+    .class-card:first-child .class-card-img { height: 380px !important; }
+
+    /* Placeholder image with gradient */
+    .img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.5rem;
+    }
+
+    .img-yoga {
+      background: linear-gradient(160deg, #C79B86 0%, #8A7A70 60%, #3A2F2B 100%);
+    }
+
+    .img-barre {
+      background: linear-gradient(160deg, #D9C9B8 0%, #C79B86 60%, #8A7A70 100%);
+    }
+
+    .img-pilates {
+      background: linear-gradient(160deg, #EDE4DA 0%, #D9C9B8 50%, #C79B86 100%);
+    }
+
+    .img-masajes {
+      background: linear-gradient(160deg, #8A7A70 0%, #C79B86 70%, #3A2F2B 100%);
+    }
+
+    .img-reflexo {
+      background: linear-gradient(160deg, #D9C9B8 0%, #8A7A70 60%, #3A2F2B 100%);
+    }
+
+    .img-meditacion {
+      background: linear-gradient(160deg, #EDE4DA 0%, #C79B86 50%, #8A7A70 100%);
+    }
+
+    .img-encuentros {
+      background: linear-gradient(160deg, #C79B86 0%, #3A2F2B 100%);
+    }
+
+    /* SVG silhouettes inside placeholders */
+    .img-placeholder svg {
+      width: 60%;
+      max-width: 180px;
+      opacity: 0.18;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .class-card-body {
+      padding: 1.5rem;
+    }
+
+    .class-card-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--espresso);
+      margin-bottom: 0.5rem;
+    }
+
+    .class-card-body p {
+      font-size: 0.85rem;
+      color: var(--taupe);
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .card-link {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clay);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: gap 0.2s;
+    }
+
+    .card-link:hover { gap: 0.7rem; }
+
+    /* ============================================
+       SESSIONS
+    ============================================ */
+    .sessions {
+      background: var(--espresso);
+      color: var(--beige);
+    }
+
+    .sessions .section-label { color: var(--clay); }
+    .sessions .section-title { color: var(--white); }
+
+    .sessions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      align-items: start;
+    }
+
+    .session-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(255,255,255,0.05);
+      transition: transform var(--transition), background var(--transition);
+      cursor: pointer;
+    }
+
+    .session-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .session-card-img { height: 320px; overflow: hidden; position: relative; }
+    .session-card:nth-child(2) .session-card-img { height: 320px; }
+
+    .session-card-body { padding: 1.5rem; }
+
+    .session-card-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .session-card-body p {
+      font-size: 0.85rem;
+      color: rgba(237,228,218,0.6);
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .session-card .card-link { color: var(--clay); }
+
+    /* ============================================
+       MEMBERSHIPS
+    ============================================ */
+    .memberships { background: var(--white); }
+
+    .memberships-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: end;
+      margin-bottom: 4rem;
+    }
+
+    .memberships-header p {
+      font-size: 0.95rem;
+      color: var(--taupe);
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .pricing-card {
+      border: 1px solid var(--sand);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      transition: all var(--transition);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--clay);
+      transform: scaleX(0);
+      transition: transform var(--transition);
+    }
+
+    .pricing-card:hover {
+      border-color: var(--clay);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(199,155,134,0.15);
+    }
+
+    .pricing-card:hover::before { transform: scaleX(1); }
+
+    .pricing-card.featured {
+      background: var(--espresso);
+      border-color: var(--espresso);
+      color: var(--white);
+    }
+
+    .pricing-card.featured::before {
+      background: var(--clay);
+      transform: scaleX(1);
+    }
+
+    .pricing-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clay);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+
+    .pricing-card.featured .pricing-label { color: var(--sand); }
+
+    .pricing-name {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--espresso);
+      margin-bottom: 0.3rem;
+    }
+
+    .pricing-card.featured .pricing-name { color: var(--white); }
+
+    .pricing-amount {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--espresso);
+      line-height: 1;
+      margin: 1rem 0;
+    }
+
+    .pricing-card.featured .pricing-amount { color: var(--white); }
+
+    .pricing-amount span {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--taupe);
+    }
+
+    .pricing-card.featured .pricing-amount span { color: rgba(237,228,218,0.6); }
+
+    .pricing-divider {
+      height: 1px;
+      background: var(--sand);
+      margin: 1.2rem 0;
+    }
+
+    .pricing-card.featured .pricing-divider { background: rgba(255,255,255,0.1); }
+
+    .pricing-detail {
+      font-size: 0.8rem;
+      color: var(--taupe);
+      font-weight: 300;
+    }
+
+    .pricing-card.featured .pricing-detail { color: rgba(237,228,218,0.7); }
+
+    .pricing-btn {
+      display: block;
+      width: 100%;
+      margin-top: 1.5rem;
+      padding: 0.75rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-align: center;
+      border: 1px solid var(--sand);
+      color: var(--espresso);
+      background: transparent;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: var(--font-sans);
+    }
+
+    .pricing-btn:hover {
+      background: var(--espresso);
+      color: var(--beige);
+      border-color: var(--espresso);
+    }
+
+    .pricing-card.featured .pricing-btn {
+      background: var(--clay);
+      border-color: var(--clay);
+      color: var(--white);
+    }
+
+    .pricing-card.featured .pricing-btn:hover {
+      background: #b8886f;
+    }
+
+    .wellhub-note {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem 1.8rem;
+      background: var(--beige);
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      color: var(--taupe);
+      font-weight: 300;
+    }
+
+    .wellhub-badge {
+      background: var(--espresso);
+      color: var(--beige);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* ============================================
+       SCHEDULE
+    ============================================ */
+    .schedule { background: var(--beige); }
+
+    .schedule-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+    }
+
+    .schedule-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .schedule-table {
+      width: 100%;
+      min-width: 640px;
+      border-collapse: collapse;
+    }
+
+    .schedule-table th {
+      padding: 1rem 1.5rem;
+      text-align: left;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      font-weight: 500;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .schedule-table td {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(217,201,184,0.4);
+      vertical-align: top;
+    }
+
+    .schedule-table tr:last-child td { border-bottom: none; }
+
+    .schedule-time {
+      font-size: 0.82rem;
+      color: var(--taupe);
+      font-weight: 400;
+      white-space: nowrap;
+      padding-top: 0.15rem;
+    }
+
+    .schedule-class {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--espresso);
+    }
+
+    .class-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-yoga     { background: var(--clay); }
+    .dot-barre    { background: var(--taupe); }
+    .dot-pilates  { background: var(--espresso); }
+
+    .schedule-reserve {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--clay);
+      font-weight: 500;
+      border-bottom: 1px solid currentColor;
+      transition: color 0.2s;
+      text-transform: uppercase;
+    }
+
+    .schedule-reserve:hover { color: var(--espresso); }
+
+    /* ============================================
+       EVENTS
+    ============================================ */
+    .events { background: var(--sand); }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .event-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      transition: transform var(--transition);
+    }
+
+    .event-card:hover { transform: translateY(-5px); }
+
+    .event-card-img { overflow: hidden; position: relative; }
+    .event-card:first-child .event-card-img { height: 320px; }
+    .event-card .event-card-img { height: 220px; }
+
+    .event-card-body { padding: 1.5rem; }
+
+    .event-date {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clay);
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    .event-card-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--espresso);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .event-card-body p {
+      font-size: 0.82rem;
+      color: var(--taupe);
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ============================================
+       BLOG
+    ============================================ */
+    .blog { background: var(--white); }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .blog-card {
+      cursor: pointer;
+      transition: transform var(--transition);
+    }
+
+    .blog-card:hover { transform: translateY(-4px); }
+
+    .blog-card-img {
+      height: 240px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+    }
+
+    .blog-category {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clay);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--espresso);
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .blog-read {
+      font-size: 0.78rem;
+      color: var(--taupe);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s, gap 0.2s;
+    }
+
+    .blog-card:hover .blog-read { color: var(--espresso); gap: 0.7rem; }
+
+    /* ============================================
+       CONTACT
+    ============================================ */
+    .contact {
+      background: var(--espresso);
+      color: var(--beige);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact .section-label { color: var(--clay); }
+    .contact .section-title { color: var(--white); }
+
+    .contact-info { padding-top: 0.5rem; }
+
+    .contact-item {
+      display: flex;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(237,228,218,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+
+    .contact-item-text { padding-top: 0.2rem; }
+
+    .contact-item-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clay);
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-item-value {
+      font-size: 0.9rem;
+      color: rgba(237,228,218,0.8);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    .contact-form { padding-top: 0.5rem; }
+
+    .form-group { margin-bottom: 1.2rem; }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(237,228,218,0.15);
+      border-radius: 10px;
+      padding: 0.9rem 1.2rem;
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(237,228,218,0.35);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--clay);
+    }
+
+    .form-group textarea { min-height: 100px; resize: vertical; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--clay);
+      color: var(--white);
+      border: none;
+      border-radius: 30px;
+      padding: 0.95rem;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: background var(--transition);
+      margin-top: 0.5rem;
+    }
+
+    .form-submit:hover { background: #b8886f; }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      background: #2A1F1B;
+      color: rgba(237,228,218,0.5);
+      padding: 3.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-brand .nav-logo {
+      color: var(--beige);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(237,228,218,0.4);
+      line-height: 1.5;
+    }
+
+    .footer-col h4 {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(237,228,218,0.4);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.82rem;
+      color: rgba(237,228,218,0.55);
+      font-weight: 300;
+      margin-bottom: 0.6rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: var(--beige); }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(237,228,218,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: rgba(237,228,218,0.5);
+      transition: all 0.2s;
+    }
+
+    .social-icon:hover {
+      border-color: var(--clay);
+      color: var(--clay);
+    }
+
+    .footer-bottom {
+      background: #231A16;
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: rgba(237,228,218,0.3);
+    }
+
+    /* ============================================
+       WHATSAPP FLOAT
+    ============================================ */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 52px;
+      height: 52px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 900;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.45);
+    }
+
+    .wa-float svg { width: 26px; height: 26px; fill: white; }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 1024px) {
+      .classes-grid { grid-template-columns: 1fr 1fr; }
+      .classes-grid .class-card:last-child { grid-column: span 2; }
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+      footer { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 5rem 1.5rem; }
+      nav { padding: 1rem 1.5rem; }
+
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-content { padding: 0 1.5rem 4rem; }
+
+      .about { grid-template-columns: 1fr; }
+      .about-image-wrap { height: 340px; order: -1; }
+      .about-badge { left: 1rem; }
+
+      .classes-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .classes-grid { grid-template-columns: 1fr; }
+      .classes-grid .class-card:last-child { grid-column: span 1; }
+
+      .sessions-grid { grid-template-columns: 1fr; }
+      .events-grid { grid-template-columns: 1fr; }
+
+      .memberships-header { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+
+      .contact { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+
+      footer { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      footer { grid-template-columns: 1fr; }
+    }
+
+
+  /* ============================================
+     BLOG MODALS
+  ============================================ */
+  .blog-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(58,47,43,0.7);
+    z-index: 9999;
+    overflow-y: auto;
+    padding: 40px 20px;
+  }
+  .blog-modal-overlay.active { display: flex; align-items: flex-start; justify-content: center; }
+  .blog-modal {
+    background: #fff;
+    max-width: 720px;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+  }
+  .blog-modal-x {
+    position: absolute;
+    top: 14px; right: 14px;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #3A2F2B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.2s;
+  }
+  .blog-modal-x:hover { background: #fff; }
+  .blog-modal-hero { width: 100%; height: 320px; object-fit: cover; display: block; }
+  .blog-modal-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: #C79B86;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 20px 32px;
+    text-decoration: none;
+  }
+  .blog-modal-back:hover { color: #3A2F2B; }
+  .blog-modal-body { padding: 0 48px 48px; }
+  .blog-modal-category {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #C79B86;
+    margin-bottom: 12px;
+  }
+  .blog-modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 4vw, 38px);
+    color: #3A2F2B;
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .blog-modal-author {
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: #8A7A70;
+    margin-bottom: 20px;
+  }
+  .blog-modal-author span { margin-right: 4px; }
+  .blog-modal-author span:not(:last-child)::after { content: ' ·'; margin-left: 4px; }
+  .blog-share {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #EDE4DA;
+  }
+  .blog-share-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8A7A70;
+    margin-right: 4px;
+  }
+  .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    border: 1px solid #D9C9B8;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: #3A2F2B;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .share-btn:hover { background: #EDE4DA; }
+  .share-btn.copied { background: #C79B86; color: #fff; border-color: #C79B86; }
+  .blog-modal-content {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    color: #3A2F2B;
+  }
+  .blog-modal-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    margin: 28px 0 10px;
+    color: #3A2F2B;
+    font-weight: 500;
+  }
+  .blog-modal-content p { margin-bottom: 18px; }
+  .blog-modal-content a { color: #C79B86; text-decoration: underline; text-underline-offset: 3px; }
+  .blog-modal-content a:hover { color: #3A2F2B; }
+  @media (max-width: 600px) {
+    .blog-modal-body { padding: 0 20px 32px; }
+    .blog-modal-hero { height: 200px; }
+  }
+
+</style>
+</head>
+<body>
+<script>
+var isEN = false;
+function toggleLang() {
+  isEN = !isEN;
+  var btn = document.getElementById("langToggle");
+  btn.textContent = isEN ? "ES" : "EN";
+  var esEls = document.querySelectorAll("[data-lang='es']");
+  var enEls = document.querySelectorAll("[data-lang='en']");
+  if (isEN) {
+    for(var i=0;i<esEls.length;i++) esEls[i].style.display = "none";
+    for(var i=0;i<enEls.length;i++) {
+      var t = enEls[i].tagName.toLowerCase();
+      enEls[i].style.display = ["p","div","h1","h2","h3","h4","ul","li"].includes(t) ? "block" : "inline";
+    }
+  } else {
+    for(var i=0;i<enEls.length;i++) enEls[i].style.display = "none";
+    for(var i=0;i<esEls.length;i++) {
+      var t = esEls[i].tagName.toLowerCase();
+      esEls[i].style.display = ["p","div","h1","h2","h3","h4","ul","li"].includes(t) ? "block" : "inline";
+    }
+  }
+}
+</script>
+
+  <!-- ============================================
+       NAVBAR
+  ============================================ -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">Bodhi</a>
+    <ul class="nav-links">
+      <li><a href="#clases" data-lang="es">Clases</a><a href="#clases" data-lang="en">Classes</a></li>
+      <li><a href="#sesiones" data-lang="es">Sesiones</a><a href="#sesiones" data-lang="en">Sessions</a></li>
+      <li><a href="#membresias" data-lang="es">Membresías</a><a href="#membresias" data-lang="en">Memberships</a></li>
+      <li><a href="#agenda" data-lang="es">Agenda</a><a href="#agenda" data-lang="en">Schedule</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contacto" class="nav-cta" data-lang="es">Reservar</a><a href="#contacto" class="nav-cta" data-lang="en">Book Now</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-toggle" id="langToggle" onclick="toggleLang()">EN</button>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" id="mobileClose">✕</span>
+    <a href="#clases" onclick="closeMobile()"><span data-lang="es">Clases</span><span data-lang="en">Classes</span></a>
+    <a href="#sesiones" onclick="closeMobile()"><span data-lang="es">Sesiones</span><span data-lang="en">Sessions</span></a>
+    <a href="#membresias" onclick="closeMobile()"><span data-lang="es">Membresías</span><span data-lang="en">Memberships</span></a>
+    <a href="#agenda" onclick="closeMobile()"><span data-lang="es">Agenda</span><span data-lang="en">Schedule</span></a>
+    <a href="#blog">Blog</a>
+    <a href="#contacto" onclick="closeMobile()"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
+  </div>
+
+  <!-- ============================================
+       HERO
+  ============================================ -->
+  <section class="hero">
+    <div class="hero-bg"><img src="images/hero.png" alt="Bodhi Wellness Club" /></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">San Telmo · Buenos Aires</p>
+      <h1 class="hero-title">
+        <span data-lang="es">Bodhi<br><em>Wellness Club</em></span>
+        <span data-lang="en">Bodhi<br><em>Wellness Club</em></span>
+      </h1>
+      <p class="hero-tagline">
+        <span data-lang="es">Tu espacio de bienestar en la ciudad.</span>
+        <span data-lang="en">Your wellness sanctuary in the city.</span>
+      </p>
+      <div class="hero-buttons">
+        <a href="#clases" class="btn-primary">
+          <span data-lang="es">Explorar clases</span>
+          <span data-lang="en">Explore classes</span>
+        </a>
+        <a href="#membresias" class="btn-outline">
+          <span data-lang="es">Ver membresías</span>
+          <span data-lang="en">View memberships</span>
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ABOUT
+  ============================================ -->
+  <section class="about" id="nosotros">
+    <div class="about-text fade-up">
+      <p class="section-label">
+        <span data-lang="es">Sobre nosotros</span>
+        <span data-lang="en">About us</span>
+      </p>
+      <h2 class="section-title">
+        <span data-lang="es">Un lugar donde el<br><em>movimiento y la calma</em><br>se encuentran.</span>
+        <span data-lang="en">A place where<br><em>movement and stillness</em><br>come together.</span>
+      </h2>
+      <p data-lang="es">Bodhi Wellness Club es un espacio pensado para tu bienestar físico, mental y emocional en el corazón de San Telmo. Combinamos el movimiento consciente con el cuidado profundo del cuerpo y la mente.</p>
+      <p data-lang="en">Bodhi Wellness Club is a space designed for your physical, mental and emotional wellbeing in the heart of San Telmo. We combine mindful movement with deep care for body and mind.</p>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-number">3</div>
+          <div class="stat-label">
+            <span data-lang="es">Disciplinas</span>
+            <span data-lang="en">Disciplines</span>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">3</div>
+          <div class="stat-label">
+            <span data-lang="es">Sesiones terapéuticas</span>
+            <span data-lang="en">Therapeutic sessions</span>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">
+            <span data-lang="es">Bienestar</span>
+            <span data-lang="en">Wellbeing</span>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">1</div>
+          <div class="stat-label">
+            <span data-lang="es">Comunidad</span>
+            <span data-lang="en">Community</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-image-wrap fade-up">
+      <img src="images/about.png" alt="Bodhi Wellness Club - Recepción" style="height:100%; object-fit:cover;" />
+    </div>
+  </section>
+
+  <!-- ============================================
+       CLASSES
+  ============================================ -->
+  <section class="classes" id="clases">
+    <div class="classes-header fade-up">
+      <div>
+        <p class="section-label">
+          <span data-lang="es">Nuestras clases</span>
+          <span data-lang="en">Our classes</span>
+        </p>
+        <h2 class="section-title">
+          <span data-lang="es">Movimiento <em>consciente</em></span>
+          <span data-lang="en">Mindful <em>movement</em></span>
+        </h2>
+      </div>
+      <a href="#agenda" class="card-link">
+        <span data-lang="es">Ver agenda completa</span>
+        <span data-lang="en">View full schedule</span>
+        → 
+      </a>
+    </div>
+    <div class="classes-grid">
+      <div class="class-card fade-up">
+        <div class="class-card-img">
+          <img src="images/yoga.png" alt="Yoga" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;" />
+        </div>
+        <div class="class-card-body">
+          <h3>Yoga</h3>
+          <p>
+            <span data-lang="es">Fluí, respirá y restaurate. Clases para todos los niveles.</span>
+            <span data-lang="en">Flow, breathe and restore. Classes for all levels.</span>
+          </p>
+          <a href="https://wa.me/5491130229096" class="card-link">
+            <span data-lang="es">Reservar clase</span>
+            <span data-lang="en">Book a class</span>
+            →
+          </a>
+        </div>
+      </div>
+      <div class="class-card fade-up">
+        <div class="class-card-img">
+          <img src="images/barre.png" alt="Barre" style="width:100%;height:100%;object-fit:cover;object-position:center center;" />
+        </div>
+        <div class="class-card-body">
+          <h3>Barre</h3>
+          <p>
+            <span data-lang="es">Tonificá y fortalecé en la barra. Ballet, pilates y fitness en uno.</span>
+            <span data-lang="en">Sculpt and strengthen at the barre. Ballet, pilates and fitness in one.</span>
+          </p>
+          <a href="https://wa.me/5491130229096" class="card-link">
+            <span data-lang="es">Reservar clase</span>
+            <span data-lang="en">Book a class</span>
+            →
+          </a>
+        </div>
+      </div>
+      <div class="class-card fade-up">
+        <div class="class-card-img">
+          <img src="images/pilates.png" alt="Mat Pilates" style="width:100%;height:100%;object-fit:cover;object-position:center center;" />
+        </div>
+        <div class="class-card-body">
+          <h3>Mat Pilates</h3>
+          <p>
+            <span data-lang="es">Fuerza central con movimiento consciente. Ideal para toda la familia.</span>
+            <span data-lang="en">Core strength meets mindful movement. Ideal for the whole family.</span>
+          </p>
+          <a href="https://wa.me/5491130229096" class="card-link">
+            <span data-lang="es">Reservar clase</span>
+            <span data-lang="en">Book a class</span>
+            →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SESSIONS
+  ============================================ -->
+  <section class="sessions" id="sesiones">
+    <div class="fade-up">
+      <p class="section-label">
+        <span data-lang="es">Sesiones & terapias</span>
+        <span data-lang="en">Sessions & therapies</span>
+      </p>
+      <h2 class="section-title">
+        <span data-lang="es">Cuidado <em>profundo</em></span>
+        <span data-lang="en">Deep <em>care</em></span>
+      </h2>
+    </div>
+    <div class="sessions-grid">
+      <div class="session-card fade-up">
+        <div class="session-card-img">
+          <img src="images/masajes.png" alt="Masajes" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="session-card-body">
+          <h3>
+            <span data-lang="es">Masajes</span>
+            <span data-lang="en">Massage</span>
+          </h3>
+          <p>
+            <span data-lang="es">Relajá cuerpo y mente con sesiones personalizadas.</span>
+            <span data-lang="en">Relax body and mind with personalized sessions.</span>
+          </p>
+          <a href="https://wa.me/5491130229096" class="card-link">
+            <span data-lang="es">Reservar sesión</span>
+            <span data-lang="en">Book session</span>
+            →
+          </a>
+        </div>
+      </div>
+      <div class="session-card fade-up">
+        <div class="session-card-img">
+          <img src="images/reflexologia.png" alt="Reflexología" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="session-card-body">
+          <h3>
+            <span data-lang="es">Reflexología</span>
+            <span data-lang="en">Reflexology</span>
+          </h3>
+          <p>
+            <span data-lang="es">Equilibrá tu energía desde los pies. Una técnica ancestral de sanación.</span>
+            <span data-lang="en">Balance your energy from the feet. An ancestral healing technique.</span>
+          </p>
+          <a href="https://wa.me/5491130229096" class="card-link">
+            <span data-lang="es">Reservar sesión</span>
+            <span data-lang="en">Book session</span>
+            →
+          </a>
+        </div>
+      </div>
+      <div class="session-card fade-up">
+        <div class="session-card-img">
+          <img src="images/meditacion.png" alt="Meditación" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="session-card-body">
+          <h3>
+            <span data-lang="es">Meditación</span>
+            <span data-lang="en">Meditation</span>
+          </h3>
+          <p>
+            <span data-lang="es">Encontrá tu centro en silencio. Guiada o en grupo.</span>
+            <span data-lang="en">Find your center in stillness. Guided or group sessions.</span>
+          </p>
+          <a href="https://wa.me/5491130229096" class="card-link">
+            <span data-lang="es">Reservar sesión</span>
+            <span data-lang="en">Book session</span>
+            →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       MEMBERSHIPS
+  ============================================ -->
+  <section class="memberships" id="membresias">
+    <div class="memberships-header fade-up">
+      <div>
+        <p class="section-label">
+          <span data-lang="es">Planes & precios</span>
+          <span data-lang="en">Plans & pricing</span>
+        </p>
+        <h2 class="section-title">
+          <span data-lang="es">Tu práctica,<br><em>tu ritmo</em></span>
+          <span data-lang="en">Your practice,<br><em>your pace</em></span>
+        </h2>
+      </div>
+      <p>
+        <span data-lang="es">Elegí el plan que mejor se adapte a tu estilo de vida. Todas las clases se pueden reservar por WhatsApp.</span>
+        <span data-lang="en">Choose the plan that best suits your lifestyle. All classes can be booked via WhatsApp.</span>
+      </p>
+    </div>
+    <div class="pricing-grid fade-up">
+      <div class="pricing-card">
+        <div class="pricing-label">
+          <span data-lang="es">Entrada</span>
+          <span data-lang="en">Drop-in</span>
+        </div>
+        <div class="pricing-name">
+          <span data-lang="es">Clase suelta</span>
+          <span data-lang="en">Single class</span>
+        </div>
+        <div class="pricing-amount">$20.000 <span>ARS</span></div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-detail">
+          <span data-lang="es">Cualquier clase · Sin compromiso</span>
+          <span data-lang="en">Any class · No commitment</span>
+        </div>
+        <a href="https://mpago.la/1FigHr4" target="_blank" class="pricing-btn">
+          <span data-lang="es">Comprar</span>
+          <span data-lang="en">Buy now</span>
+        </a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-label">Pack</div>
+        <div class="pricing-name">4 <span data-lang="es">clases</span><span data-lang="en">classes</span></div>
+        <div class="pricing-amount">$72.000 <span>ARS</span></div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-detail">
+          <span data-lang="es">$18.000 por clase · 30 días</span>
+          <span data-lang="en">$18.000 per class · 30 days</span>
+        </div>
+        <a href="https://mpago.la/33H7t4P" target="_blank" class="pricing-btn">
+          <span data-lang="es">Comprar</span>
+          <span data-lang="en">Buy now</span>
+        </a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-label">
+          <span data-lang="es">Más popular</span>
+          <span data-lang="en">Most popular</span>
+        </div>
+        <div class="pricing-name">8 <span data-lang="es">clases</span><span data-lang="en">classes</span></div>
+        <div class="pricing-amount">$110.000 <span>ARS</span></div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-detail">
+          <span data-lang="es">$13.750 por clase · 45 días</span>
+          <span data-lang="en">$13.750 per class · 45 days</span>
+        </div>
+        <a href="https://mpago.la/2d9BZf7" target="_blank" class="pricing-btn">
+          <span data-lang="es">Comprar</span>
+          <span data-lang="en">Buy now</span>
+        </a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-label">Pack</div>
+        <div class="pricing-name">12 <span data-lang="es">clases</span><span data-lang="en">classes</span></div>
+        <div class="pricing-amount">$150.000 <span>ARS</span></div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-detail">
+          <span data-lang="es">$12.500 por clase · 60 días</span>
+          <span data-lang="en">$12.500 per class · 60 days</span>
+        </div>
+        <a href="https://mpago.la/1Tr6TXk" target="_blank" class="pricing-btn">
+          <span data-lang="es">Comprar</span>
+          <span data-lang="en">Buy now</span>
+        </a>
+      </div>
+    </div>
+    <div class="wellhub-note fade-up">
+      <span class="wellhub-badge">Wellhub</span>
+      <span data-lang="es">Aceptamos socios <strong>Wellhub Platinum y Diamond</strong>. Presentá tu membresía activa en recepción.</span>
+      <span data-lang="en">We welcome <strong>Wellhub Platinum and Diamond</strong> members. Show your active membership at reception.</span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SCHEDULE
+  ============================================ -->
+  <section class="schedule" id="agenda">
+    <div class="schedule-header fade-up">
+      <div>
+        <p class="section-label">
+          <span data-lang="es">Horarios semanales</span>
+          <span data-lang="en">Weekly schedule</span>
+        </p>
+        <h2 class="section-title">
+          <span data-lang="es"><em>Agenda</em></span>
+          <span data-lang="en"><em>Schedule</em></span>
+        </h2>
+      </div>
+      <a href="https://wa.me/5491130229096" class="btn-primary" style="white-space:nowrap">
+        <span data-lang="es">Reservar por WhatsApp</span>
+        <span data-lang="en">Book via WhatsApp</span>
+      </a>
+    </div>
+    <div class="schedule-table-wrap fade-up">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th><span data-lang="es">Hora</span><span data-lang="en">Time</span></th>
+            <th><span data-lang="es">Lunes</span><span data-lang="en">Monday</span></th>
+            <th><span data-lang="es">Martes</span><span data-lang="en">Tuesday</span></th>
+            <th><span data-lang="es">Miércoles</span><span data-lang="en">Wednesday</span></th>
+            <th><span data-lang="es">Jueves</span><span data-lang="en">Thursday</span></th>
+            <th><span data-lang="es">Viernes</span><span data-lang="en">Friday</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="schedule-time">09:00</td>
+            <td><span class="schedule-class"><span class="class-dot dot-yoga"></span>Yoga</span></td>
+            <td><span class="schedule-class"><span class="class-dot dot-pilates"></span>Mat Pilates</span></td>
+            <td><span class="schedule-class"><span class="class-dot dot-yoga"></span>Yoga</span></td>
+            <td><span class="schedule-class"><span class="class-dot dot-barre"></span>Barre</span></td>
+            <td><span class="schedule-class"><span class="class-dot dot-yoga"></span>Yoga</span></td>
+          </tr>
+          <tr>
+            <td class="schedule-time">10:30</td>
+            <td><span class="schedule-class"><span class="class-dot dot-barre"></span>Barre</span></td>
+            <td>—</td>
+            <td><span class="schedule-class"><span class="class-dot dot-barre"></span>Barre</span></td>
+            <td>—</td>
+            <td><span class="schedule-class"><span class="class-dot dot-barre"></span>Barre</span></td>
+          </tr>
+          <tr>
+            <td class="schedule-time">17:00</td>
+            <td>—</td>
+            <td><span class="schedule-class"><span class="class-dot dot-yoga"></span>Yoga</span></td>
+            <td>—</td>
+            <td><span class="schedule-class"><span class="class-dot dot-yoga"></span>Yoga</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="schedule-time">18:00</td>
+            <td><span class="schedule-class"><span class="class-dot dot-pilates"></span>Mat Pilates</span></td>
+            <td>—</td>
+            <td><span class="schedule-class"><span class="class-dot dot-pilates"></span>Mat Pilates</span></td>
+            <td>—</td>
+            <td><span class="schedule-class"><span class="class-dot dot-pilates"></span>Mat Pilates</span></td>
+          </tr>
+          <tr>
+            <td class="schedule-time">19:00</td>
+            <td>—</td>
+            <td><span class="schedule-class"><span class="class-dot dot-barre"></span>Barre</span></td>
+            <td>—</td>
+            <td><span class="schedule-class"><span class="class-dot dot-pilates"></span>Mat Pilates</span></td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============================================
+       EVENTS
+  ============================================ -->
+  <section class="events" id="encuentros">
+    <div class="fade-up">
+      <p class="section-label">
+        <span data-lang="es">Talleres & encuentros</span>
+        <span data-lang="en">Workshops & events</span>
+      </p>
+      <h2 class="section-title">
+        <span data-lang="es"><em>Encuentros</em></span>
+        <span data-lang="en"><em>Events</em></span>
+      </h2>
+    </div>
+    <div class="events-grid">
+      <div class="event-card fade-up">
+        <div class="event-card-img" style="height:320px;">
+          <img src="images/encuentro-1.png" alt="Taller de Respiración" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+        </div>
+        <div class="event-card-body">
+          <p class="event-date">15 ABR 2025</p>
+          <h3>
+            <span data-lang="es">Taller de Respiración Consciente</span>
+            <span data-lang="en">Conscious Breathing Workshop</span>
+          </h3>
+          <p>
+            <span data-lang="es">Explorá técnicas de respiración para reducir el estrés.</span>
+            <span data-lang="en">Explore breathing techniques to reduce stress.</span>
+          </p>
+          <a href="https://wa.me/5491130229096" class="card-link">
+            <span data-lang="es">Más info</span>
+            <span data-lang="en">More info</span>
+            →
+          </a>
+        </div>
+      </div>
+      <div class="event-card fade-up">
+        <div class="event-card-img" style="height:220px;">
+          <img src="images/meditacion.png" alt="Retiro de Meditación" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="event-card-body">
+          <p class="event-date">22 ABR 2025</p>
+          <h3>
+            <span data-lang="es">Retiro de Meditación</span>
+            <span data-lang="en">Meditation Retreat</span>
+          </h3>
+          <p>
+            <span data-lang="es">Una jornada completa de silencio y conexión.</span>
+            <span data-lang="en">A full day of silence and connection.</span>
+          </p>
+          <a href="https://wa.me/5491130229096" class="card-link">
+            <span data-lang="es">Más info</span>
+            <span data-lang="en">More info</span>
+            →
+          </a>
+        </div>
+      </div>
+      <div class="event-card fade-up">
+        <div class="event-card-img" style="height:220px;">
+          <img src="images/barre.png" alt="Masterclass de Barre" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+        </div>
+        <div class="event-card-body">
+          <p class="event-date">5 MAY 2025</p>
+          <h3>
+            <span data-lang="es">Masterclass de Barre</span>
+            <span data-lang="en">Barre Masterclass</span>
+          </h3>
+          <p>
+            <span data-lang="es">Clase especial con instructora invitada.</span>
+            <span data-lang="en">Special class with guest instructor.</span>
+          </p>
+          <a href="https://wa.me/5491130229096" class="card-link">
+            <span data-lang="es">Más info</span>
+            <span data-lang="en">More info</span>
+            →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       BLOG
+  ============================================ -->
+  <section class="blog" id="blog">
+    <div class="fade-up">
+      <p class="section-label">
+        <span data-lang="es">Artículos & bienestar</span>
+        <span data-lang="en">Articles & wellness</span>
+      </p>
+      <h2 class="section-title">
+        <span data-lang="es">Wellness <em>Blog</em></span>
+        <span data-lang="en">Wellness <em>Blog</em></span>
+      </h2>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card fade-up" onclick="openBlog('blog1')" style="cursor:pointer;">
+        <div class="blog-card-img">
+          <img src="images/barre.png" alt="Barre" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);" />
+        </div>
+        <p class="blog-category">Fitness</p>
+        <h3>
+          <span data-lang="es">Por qué el Barre cambia tu cuerpo en 4 semanas</span>
+          <span data-lang="en">Why Barre transforms your body in 4 weeks</span>
+        </h3>
+        <span class="blog-read">
+          <span data-lang="es">Leer más</span>
+          <span data-lang="en">Read more</span> →
+        </span>
+      </div>
+      <div class="blog-card fade-up" onclick="openBlog('blog2')" style="cursor:pointer;">
+        <div class="blog-card-img">
+          <img src="images/pilates.png" alt="Pilates" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);" />
+        </div>
+        <p class="blog-category">Bienestar</p>
+        <h3>
+          <span data-lang="es">5 beneficios del Mat Pilates que no conocías</span>
+          <span data-lang="en">5 Mat Pilates benefits you didn't know about</span>
+        </h3>
+        <span class="blog-read">
+          <span data-lang="es">Leer más</span>
+          <span data-lang="en">Read more</span> →
+        </span>
+      </div>
+      <div class="blog-card fade-up" onclick="openBlog('blog3')" style="cursor:pointer;">
+        <div class="blog-card-img">
+          <img src="images/meditacion.png" alt="Meditación" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);" />
+        </div>
+        <p class="blog-category">Mindfulness</p>
+        <h3>
+          <span data-lang="es">Cómo crear un ritual de bienestar diario</span>
+          <span data-lang="en">How to create a daily wellness ritual</span>
+        </h3>
+        <span class="blog-read">
+          <span data-lang="es">Leer más</span>
+          <span data-lang="en">Read more</span> →
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTACT
+  ============================================ -->
+  <section class="contact" id="contacto">
+    <div class="contact-info fade-up">
+      <p class="section-label">
+        <span data-lang="es">Contacto & ubicación</span>
+        <span data-lang="en">Contact & location</span>
+      </p>
+      <h2 class="section-title" style="margin-bottom:2.5rem;">
+        <span data-lang="es">Vení a<br><em>visitarnos</em></span>
+        <span data-lang="en">Come<br><em>visit us</em></span>
+      </h2>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-item-text">
+          <div class="contact-item-label">
+            <span data-lang="es">Dirección</span>
+            <span data-lang="en">Address</span>
+          </div>
+          <div class="contact-item-value">Av. Caseros 594<br>San Telmo, Buenos Aires</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div class="contact-item-text">
+          <div class="contact-item-label">WhatsApp</div>
+          <div class="contact-item-value">
+            <a href="https://wa.me/5491130229096" style="color:var(--clay);">+54 9 11 3022-9096</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-item-text">
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c1a9aeada081a3aea5a9a8b6a4adadafa4b2b2a2adb4a3efa2aeac">[email&#160;protected]</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📷</div>
+        <div class="contact-item-text">
+          <div class="contact-item-label">Instagram</div>
+          <div class="contact-item-value">
+            <a href="#" style="color:var(--clay);">@bodhiwellnessclub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form fade-up">
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" placeholder="Nombre / Name" />
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email" />
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Teléfono / Phone (opcional)" />
+      </div>
+      <div class="form-group">
+        <textarea placeholder="¿En qué podemos ayudarte? / How can we help?"></textarea>
+      </div>
+      <button class="form-submit" onclick="window.open('https://wa.me/5491130229096','_blank')">
+        <span data-lang="es">Enviar mensaje</span>
+        <span data-lang="en">Send message</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer>
+    <div class="footer-brand">
+      <span class="nav-logo">Bodhi</span>
+      <p class="footer-tagline">
+        <span data-lang="es">"Tu espacio de bienestar en la ciudad."</span>
+        <span data-lang="en">"Your wellness sanctuary in the city."</span>
+      </p>
+      <div class="footer-social">
+        <a href="#" class="social-icon">ig</a>
+        <a href="https://wa.me/5491130229096" class="social-icon">wa</a>
+        <a href="#" class="social-icon">fb</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4><span data-lang="es">Explorar</span><span data-lang="en">Explore</span></h4>
+      <a href="#clases"><span data-lang="es">Clases</span><span data-lang="en">Classes</span></a>
+      <a href="#sesiones"><span data-lang="es">Sesiones</span><span data-lang="en">Sessions</span></a>
+      <a href="#encuentros"><span data-lang="es">Encuentros</span><span data-lang="en">Events</span></a>
+      <a href="#blog">Blog</a>
+    </div>
+    <div class="footer-col">
+      <h4><span data-lang="es">Membresías</span><span data-lang="en">Memberships</span></h4>
+      <a href="#membresias"><span data-lang="es">Clase suelta</span><span data-lang="en">Single class</span></a>
+      <a href="#membresias">Pack 4</a>
+      <a href="#membresias">Pack 8</a>
+      <a href="#membresias">Pack 12</a>
+      <a href="#membresias">Wellhub</a>
+    </div>
+    <div class="footer-col">
+      <h4><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></h4>
+      <a href="https://wa.me/5491130229096">+54 9 11 3022-9096</a>
+      <a href="#"><span class="__cf_email__" data-cfemail="c9a1a6a5a889aba6ada1a0beaca5a5a7acbabaaaa5bcabe7aaa6a4">[email&#160;protected]</span></a>
+      <a href="#">Av. Caseros 594, San Telmo</a>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <span>© 2025 Bodhi Wellness Club. <span data-lang="es">Todos los derechos reservados.</span><span data-lang="en">All rights reserved.</span></span>
+    <span>San Telmo · Buenos Aires · Argentina</span>
+  </div>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5491130229096" class="wa-float" target="_blank" title="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
+
+  <!-- ============================================
+       JAVASCRIPT
+  ============================================ -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+
+    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+    }
+
+    // Fade-up on scroll - start hidden then animate in
+    const fadeEls = document.querySelectorAll('.fade-up');
+    fadeEls.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.fo
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+
+  </script>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+  </div>
+
+  <!-- Blog Modal 1 -->
+  <div class="blog-modal-overlay" id="blog1">
+    <div class="blog-modal">
+      <button class="blog-modal-x" onclick="closeBlog('blog1')">✕</button>
+      <img src="images/barre.png" class="blog-modal-hero" alt="Barre">
+      <button class="blog-modal-back" onclick="closeBlog('blog1')">← Volver al sitio</button>
+      <div class="blog-modal-body">
+        <p class="blog-modal-category">Fitness</p>
+        <h2 class="blog-modal-title">Por qué el Barre cambia tu cuerpo en 4 semanas</h2>
+        <div class="blog-modal-author">
+          <span>Euge Romero</span>
+          <span>Buenos Aires</span>
+          <span>10/02/2026</span>
+        </div>
+        <div class="blog-share">
+          <span class="blog-share-label">Compartir</span>
+          <button class="share-btn" onclick="copyLink('https://bodhiwellnessclub.com', this)">📋 Copiar link</button>
+          <a class="share-btn" href="https://wa.me/?text=Por%20qu%C3%A9%20el%20Barre%20cambia%20tu%20cuerpo%20en%204%20semanas%20%E2%80%93%20bodhiwellnessclub.com" target="_blank">💬 WhatsApp</a>
+          <a class="share-btn" href="https://twitter.com/intent/tweet?text=Por+qu%C3%A9+el+Barre+cambia+tu+cuerpo+en+4+semanas&url=https://bodhiwellnessclub.com" target="_blank">🐦 X</a>
+          <button class="share-btn" onclick="copyLink('https://bodhiwellnessclub.com', this)">📸 Instagram</button>
+        </div>
+        <div class="blog-modal-content">
+          <p>El <a href="#clases" onclick="closeBlog('blog1')">Barre</a> es mucho más que una clase de danza. Es un método de entrenamiento que combina movimientos de ballet clásico con técnicas de Pilates y yoga, diseñado para esculpir y tonificar el cuerpo de forma profunda y sostenida.</p>
+          <h3>¿Qué pasa en tu cuerpo en las primeras semanas?</h3>
+          <p>Durante las primeras dos semanas vas a notar que músculos que nunca habías sentido empiezan a activarse. El Barre trabaja músculos estabilizadores profundos — glúteos, isquiotibiales, core — que en la vida cotidiana permanecen dormidos.</p>
+          <h3>La clave: el pulso pequeño</h3>
+          <p>Los movimientos de pequeña amplitud y alta repetición del Barre generan fatiga muscular sin impacto articular. Esto permite entrenar con intensidad sin lastimarse, ideal para todo tipo de cuerpos y niveles.</p>
+          <h3>A las 4 semanas</h3>
+          <p>Con práctica constante de 2 a 3 veces por semana, notás mejoras visibles en postura, definición muscular en piernas y glúteos, y mayor conciencia corporal.</p>
+          <p>En Bodhi ofrecemos <a href="#clases" onclick="closeBlog('blog1')">clases de Barre</a> para todos los niveles. ¿Te animás? <a href="#membresias" onclick="closeBlog('blog1')">Conocé nuestros packs</a> y empezá esta semana.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Modal 2 -->
+  <div class="blog-modal-overlay" id="blog2">
+    <div class="blog-modal">
+      <button class="blog-modal-x" onclick="closeBlog('blog2')">✕</button>
+      <img src="images/pilates.png" class="blog-modal-hero" alt="Pilates">
+      <button class="blog-modal-back" onclick="closeBlog('blog2')">← Volver al sitio</button>
+      <div class="blog-modal-body">
+        <p class="blog-modal-category">Bienestar</p>
+        <h2 class="blog-modal-title">5 beneficios del Mat Pilates que no conocías</h2>
+        <div class="blog-modal-author">
+          <span>Euge Romero</span>
+          <span>Buenos Aires</span>
+          <span>10/02/2026</span>
+        </div>
+        <div class="blog-share">
+          <span class="blog-share-label">Compartir</span>
+          <button class="share-btn" onclick="copyLink('https://bodhiwellnessclub.com', this)">📋 Copiar link</button>
+          <a class="share-btn" href="https://wa.me/?text=5%20beneficios%20del%20Mat%20Pilates%20que%20no%20conoc%C3%ADas%20%E2%80%93%20bodhiwellnessclub.com" target="_blank">💬 WhatsApp</a>
+          <a class="share-btn" href="https://twitter.com/intent/tweet?text=5+beneficios+del+Mat+Pilates+que+no+conoc%C3%ADas&url=https://bodhiwellnessclub.com" target="_blank">🐦 X</a>
+          <button class="share-btn" onclick="copyLink('https://bodhiwellnessclub.com', this)">📸 Instagram</button>
+        </div>
+        <div class="blog-modal-content">
+          <p>El <a href="#clases" onclick="closeBlog('blog2')">Mat Pilates</a> es una de las disciplinas más completas que existen. Más allá de la flexibilidad y el core, hay beneficios menos conocidos que transforman la calidad de vida.</p>
+          <h3>1. Mejora tu respiración</h3>
+          <p>El Pilates enseña a respirar de forma lateral y profunda, expandiendo la capacidad pulmonar y reduciendo la tensión en el pecho y los hombros.</p>
+          <h3>2. Corrige desequilibrios musculares</h3>
+          <p>Todos tenemos un lado más fuerte que el otro. El Mat Pilates trabaja de forma simétrica, corrigiendo compensaciones que con el tiempo generan dolor crónico.</p>
+          <h3>3. Reduce el estrés</h3>
+          <p>La combinación de movimiento consciente y respiración activa el sistema nervioso parasimpático. Combinalo con una <a href="#sesiones" onclick="closeBlog('blog2')">sesión de meditación</a> para potenciar los resultados.</p>
+          <h3>4. Mejora la concentración</h3>
+          <p>Cada ejercicio requiere atención plena. Con el tiempo, esa capacidad de foco se traslada a otras áreas de la vida.</p>
+          <h3>5. Es para siempre</h3>
+          <p>A diferencia de deportes de alto impacto, el Mat Pilates se puede practicar a cualquier edad. Mirá nuestra <a href="#agenda" onclick="closeBlog('blog2')">agenda semanal</a> y encontrá tu horario ideal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Modal 3 -->
+  <div class="blog-modal-overlay" id="blog3">
+    <div class="blog-modal">
+      <button class="blog-modal-x" onclick="closeBlog('blog3')">✕</button>
+      <img src="images/meditacion.png" class="blog-modal-hero" alt="Meditación">
+      <button class="blog-modal-back" onclick="closeBlog('blog3')">← Volver al sitio</button>
+      <div class="blog-modal-body">
+        <p class="blog-modal-category">Mindfulness</p>
+        <h2 class="blog-modal-title">Cómo crear un ritual de bienestar diario</h2>
+        <div class="blog-modal-author">
+          <span>Euge Romero</span>
+          <span>Buenos Aires</span>
+          <span>10/02/2026</span>
+        </div>
+        <div class="blog-share">
+          <span class="blog-share-label">Compartir</span>
+          <button class="share-btn" onclick="copyLink('https://bodhiwellnessclub.com', this)">📋 Copiar link</button>
+          <a class="share-btn" href="https://wa.me/?text=C%C3%B3mo%20crear%20un%20ritual%20de%20bienestar%20diario%20%E2%80%93%20bodhiwellnessclub.com" target="_blank">💬 WhatsApp</a>
+          <a class="share-btn" href="https://twitter.com/intent/tweet?text=C%C3%B3mo+crear+un+ritual+de+bienestar+diario&url=https://bodhiwellnessclub.com" target="_blank">🐦 X</a>
+          <button class="share-btn" onclick="copyLink('https://bodhiwellnessclub.com', this)">📸 Instagram</button>
+        </div>
+        <div class="blog-modal-content">
+          <p>Un ritual de bienestar no requiere horas libres ni grandes cambios de vida. Requiere intención. Pequeños actos realizados con consciencia transforman cómo te sentís a lo largo del día.</p>
+          <h3>Empezá por la mañana</h3>
+          <p>Los primeros 10 minutos del día definen el tono del resto. En lugar de agarrar el celular, probá con 5 minutos de respiración profunda. En Bodhi tenemos <a href="#sesiones" onclick="closeBlog('blog3')">sesiones de meditación</a> pensadas para arrancar bien el día.</p>
+          <h3>El movimiento como ancla</h3>
+          <p>Elegí una práctica que disfrutes — <a href="#clases" onclick="closeBlog('blog3')">yoga, Barre o Pilates</a>. Lo importante no es la intensidad sino la consistencia. Una clase tres veces por semana vale más que una hora diaria que abandonás a los 15 días.</p>
+          <h3>Cerrá el día con intención</h3>
+          <p>Apagar pantallas 30 minutos antes de dormir, tomar algo cálido, escribir tres cosas que salieron bien — pequeñas señales que le indican a tu cuerpo que es momento de descansar.</p>
+          <p>En Bodhi creemos que el bienestar es una práctica diaria. <a href="#contacto" onclick="closeBlog('blog3')">Escribinos</a> y te ayudamos a armar tu rutina ideal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openBlog(id) {
+      document.getElementById(id).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeBlog(id) {
+      document.getElementById(id).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function copyLink(url, btn) {
+      navigator.clipboard.writeText(url).then(function() {
+        var orig = btn.innerHTML;
+        btn.innerHTML = '✓ Copiado!';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.innerHTML = orig; btn.classList.remove('copied'); }, 2000);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.blog-card').forEach(function(card, i) {
+        card.querySelector('.blog-card-img').addEventListener('click', function() {
+          openBlog('blog' + (i+1));
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
