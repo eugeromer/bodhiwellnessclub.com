@@ -951,15 +951,15 @@
 
     .faq-q { outline: none; }
     .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .4s ease;
+      display: none;
     }
-    .faq-a.open { max-height: 300px; }
+    .faq-a.open {
+      display: block;
+    }
     .faq-a-inner p {
       font-family: var(--font-sans); font-size: 14px; font-weight: 300;
       line-height: 1.85; color: var(--taupe);
-      padding-bottom: 24px;
+      padding: 4px 0 24px;
     }
 
     .faq-footer {
@@ -2161,20 +2161,20 @@ function toggleLang() {
   });
 
   // FAQ acordeón
-  document.querySelectorAll('.faq-q').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var answer = btn.nextElementSibling;
-      var isOpen = answer.classList.contains('open');
-      // cerrar todos
-      document.querySelectorAll('.faq-a.open').forEach(function(a) {
-        a.classList.remove('open');
-        a.previousElementSibling.classList.remove('open');
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var answer = btn.nextElementSibling;
+        var isOpen = answer.classList.contains('open');
+        document.querySelectorAll('.faq-a.open').forEach(function(a) {
+          a.classList.remove('open');
+          a.previousElementSibling.classList.remove('open');
+        });
+        if (!isOpen) {
+          answer.classList.add('open');
+          btn.classList.add('open');
+        }
       });
-      // abrir si estaba cerrado
-      if (!isOpen) {
-        answer.classList.add('open');
-        btn.classList.add('open');
-      }
     });
   });
 
