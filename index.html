@@ -360,49 +360,63 @@
       padding: var(--pad) var(--side);
     }
     .agenda-inner { max-width: 1100px; margin: 0 auto; }
-    .agenda-header { margin-bottom: 44px; }
-    .agenda-table-wrap { overflow-x: auto; }
-    .agenda-table {
-      width: 100%; border-collapse: collapse;
-      font-size: 13px;
-    }
-    .agenda-table th {
-      font-family: var(--font-sans); font-size: 10px; font-weight: 500;
-      letter-spacing: .16em; text-transform: uppercase; color: var(--taupe);
-      padding: 14px 16px; text-align: center;
-      border-bottom: 1px solid var(--sand);
-    }
-    .agenda-table th:first-child { text-align: left; }
-    .agenda-table td {
-      padding: 13px 16px; text-align: center;
-      border-bottom: 1px solid rgba(217,201,184,.4);
-      font-size: 12px; font-weight: 300; color: var(--taupe);
-    }
-    .agenda-table td:first-child {
-      font-family: var(--font-serif); font-size: 15px; font-weight: 400;
-      color: var(--espresso); text-align: left; white-space: nowrap;
-    }
-    .agenda-table tr:last-child td { border-bottom: none; }
-    .clase-tag {
-      display: inline-flex; align-items: center; gap: 5px;
-      padding: 4px 12px; border-radius: 100px;
-      font-size: 11px; font-weight: 400; white-space: nowrap;
-    }
-    .tag-yoga     { background: rgba(139,163,150,.15); color: #4a7a60; }
-    .tag-barre    { background: rgba(199,155,134,.15); color: #8a4a35; }
-    .tag-pilates  { background: rgba(138,122,112,.12); color: #5a4a40; }
-    .tag-hot      { background: rgba(196,83,58,.12);   color: #a33826; }
-    .agenda-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
-    .dot-yoga    { background: #4a7a60; }
-    .dot-barre   { background: #8a4a35; }
-    .dot-pilates { background: #5a4a40; }
-    .dot-hot     { background: #a33826; }
+    .agenda-header { margin-bottom: 32px; }
     .agenda-legend {
-      display: flex; gap: 24px; flex-wrap: wrap; margin-top: 24px;
-      padding-top: 20px; border-top: 1px solid var(--sand);
+      display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 32px;
     }
     .legend-item { display: flex; align-items: center; gap: 7px; }
     .legend-label { font-size: 11px; font-weight: 300; color: var(--taupe); letter-spacing: .06em; }
+    .agenda-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+    .dot-yoga      { background: #4a7a60; }
+    .dot-barre     { background: #8a4a35; }
+    .dot-pilates   { background: #5a4a40; }
+    .dot-hot       { background: #a33826; }
+    .dot-stretching{ background: #6e6080; }
+
+    /* Grid de días */
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+    }
+    @media (max-width: 960px) { .agenda-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 540px) { .agenda-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .agenda-day { display: flex; flex-direction: column; gap: 6px; }
+    .agenda-day-name {
+      font-family: var(--font-serif);
+      font-size: 15px; font-weight: 400; font-style: italic;
+      color: var(--espresso); padding-bottom: 8px;
+      border-bottom: 1px solid var(--sand); margin-bottom: 2px; line-height: 1;
+    }
+
+    /* Tarjetas de clase */
+    .agenda-card {
+      border-radius: 6px; padding: 7px 9px;
+      border-left: 2px solid;
+    }
+    .agenda-card.yoga      { background: rgba(74,122,96,.08);   border-color: #4a7a60; }
+    .agenda-card.barre     { background: rgba(138,74,53,.08);   border-color: #8a4a35; }
+    .agenda-card.pilates   { background: rgba(90,74,64,.08);    border-color: #5a4a40; }
+    .agenda-card.hot       { background: rgba(163,56,38,.08);   border-color: #a33826; }
+    .agenda-card.stretching{ background: rgba(110,96,128,.08);  border-color: #6e6080; }
+
+    .ac-time {
+      font-size: 9px; font-weight: 500; color: var(--clay);
+      letter-spacing: .05em; line-height: 1; margin-bottom: 3px;
+    }
+    .ac-name {
+      font-size: 9px; color: var(--taupe);
+      letter-spacing: .04em; text-transform: uppercase; line-height: 1.25;
+    }
+    .ac-sala {
+      font-size: 8px; color: var(--hot); letter-spacing: .08em;
+      text-transform: uppercase; margin-top: 2px;
+    }
+    .agenda-note {
+      font-size: 11px; font-style: italic; color: var(--taupe);
+      letter-spacing: .04em; margin-top: 20px; text-align: center;
+    }
 
     /* ── THE SPACE (BODHI) ──────────────────── */
     .the-space {
@@ -1313,6 +1327,7 @@ function toggleLang() {
       <div class="ter-item"><p class="ter-num">06</p><h3 class="ter-name"><span data-lang="es">Masaje facial</span><span data-lang="en" style="display:none">Facial massage</span></h3><p class="ter-desc"><span data-lang="es">Relajación profunda del rostro, cuello y escote.</span><span data-lang="en" style="display:none">Deep relaxation of face, neck and décolleté.</span></p><p class="ter-price">$35.000</p></div>
       <div class="ter-item"><p class="ter-num">07</p><h3 class="ter-name"><span data-lang="es">Exfoliación corporal</span><span data-lang="en" style="display:none">Body exfoliation</span></h3><p class="ter-desc"><span data-lang="es">Renovación de la piel mediante técnicas de exfoliación profunda e hidratación.</span><span data-lang="en" style="display:none">Skin renewal through deep exfoliation and hydration techniques.</span></p><p class="ter-price">$50.000</p></div>
       <div class="ter-item"><p class="ter-num">08</p><h3 class="ter-name">Dry Body Brush</h3><p class="ter-desc"><span data-lang="es">Técnica de cepillado en seco que estimula la circulación, activa el sistema linfático y renueva la piel.</span><span data-lang="en" style="display:none">Dry brushing technique that stimulates circulation, activates the lymphatic system and renews the skin.</span></p><p class="ter-price">$40.000</p></div>
+      <div class="ter-item"><p class="ter-num">09</p><h3 class="ter-name"><span data-lang="es">Masaje de cuero cabelludo</span><span data-lang="en" style="display:none">Scalp massage</span></h3><p class="ter-desc"><span data-lang="es">Masaje relajante que estimula la circulación del cuero cabelludo, alivia tensiones y favorece el bienestar general.</span><span data-lang="en" style="display:none">Relaxing massage that stimulates scalp circulation, relieves tension and promotes overall wellbeing.</span></p><p class="ter-price">$40.000</p></div>
     </div>
   </div>
 </section>
@@ -1324,83 +1339,72 @@ function toggleLang() {
       <span class="sec-label"><span data-lang="es">Horarios semanales</span><span data-lang="en" style="display:none">Weekly schedule</span></span>
       <h2 class="sec-title"><span data-lang="es">Agenda de <em>clases</em></span><span data-lang="en" style="display:none">Class <em>schedule</em></span></h2>
     </div>
-    <div class="agenda-table-wrap fu">
-      <table class="agenda-table">
-        <thead>
-          <tr>
-            <th><span data-lang="es">Horario</span><span data-lang="en" style="display:none">Time</span></th>
-            <th><span data-lang="es">Lunes</span><span data-lang="en" style="display:none">Monday</span></th>
-            <th><span data-lang="es">Martes</span><span data-lang="en" style="display:none">Tuesday</span></th>
-            <th><span data-lang="es">Miércoles</span><span data-lang="en" style="display:none">Wednesday</span></th>
-            <th><span data-lang="es">Jueves</span><span data-lang="en" style="display:none">Thursday</span></th>
-            <th><span data-lang="es">Viernes</span><span data-lang="en" style="display:none">Friday</span></th>
-            <th><span data-lang="es">Sábado</span><span data-lang="en" style="display:none">Saturday</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>08:00</td>
-            <td><span class="clase-tag tag-yoga"><span class="agenda-dot dot-yoga"></span>Yoga</span></td>
-            <td>—</td>
-            <td><span class="clase-tag tag-yoga"><span class="agenda-dot dot-yoga"></span>Yoga</span></td>
-            <td>—</td>
-            <td><span class="clase-tag tag-yoga"><span class="agenda-dot dot-yoga"></span>Yoga</span></td>
-            <td><span class="clase-tag tag-yoga"><span class="agenda-dot dot-yoga"></span>Yoga</span></td>
-          </tr>
-          <tr>
-            <td>09:30</td>
-            <td><span class="clase-tag tag-barre"><span class="agenda-dot dot-barre"></span>Barre</span></td>
-            <td><span class="clase-tag tag-pilates"><span class="agenda-dot dot-pilates"></span>Pilates</span></td>
-            <td><span class="clase-tag tag-barre"><span class="agenda-dot dot-barre"></span>Barre</span></td>
-            <td><span class="clase-tag tag-pilates"><span class="agenda-dot dot-pilates"></span>Pilates</span></td>
-            <td><span class="clase-tag tag-barre"><span class="agenda-dot dot-barre"></span>Barre</span></td>
-            <td><span class="clase-tag tag-pilates"><span class="agenda-dot dot-pilates"></span>Pilates</span></td>
-          </tr>
-          <tr>
-            <td>11:00</td>
-            <td>—</td>
-            <td><span class="clase-tag tag-yoga"><span class="agenda-dot dot-yoga"></span>Yoga</span></td>
-            <td>—</td>
-            <td><span class="clase-tag tag-yoga"><span class="agenda-dot dot-yoga"></span>Yoga</span></td>
-            <td>—</td>
-            <td><span class="clase-tag tag-barre"><span class="agenda-dot dot-barre"></span>Barre</span></td>
-          </tr>
-          <tr>
-            <td>17:00</td>
-            <td><span class="clase-tag tag-hot"><span class="agenda-dot dot-hot"></span>Hot Yoga</span></td>
-            <td>—</td>
-            <td><span class="clase-tag tag-hot"><span class="agenda-dot dot-hot"></span>Hot Yoga</span></td>
-            <td>—</td>
-            <td><span class="clase-tag tag-hot"><span class="agenda-dot dot-hot"></span>Hot Yoga</span></td>
-            <td>—</td>
-          </tr>
-          <tr>
-            <td>18:30</td>
-            <td><span class="clase-tag tag-pilates"><span class="agenda-dot dot-pilates"></span>Pilates</span></td>
-            <td><span class="clase-tag tag-barre"><span class="agenda-dot dot-barre"></span>Barre</span></td>
-            <td><span class="clase-tag tag-pilates"><span class="agenda-dot dot-pilates"></span>Pilates</span></td>
-            <td><span class="clase-tag tag-barre"><span class="agenda-dot dot-barre"></span>Barre</span></td>
-            <td><span class="clase-tag tag-pilates"><span class="agenda-dot dot-pilates"></span>Pilates</span></td>
-            <td>—</td>
-          </tr>
-          <tr>
-            <td>20:00</td>
-            <td><span class="clase-tag tag-yoga"><span class="agenda-dot dot-yoga"></span>Yoga</span></td>
-            <td><span class="clase-tag tag-hot"><span class="agenda-dot dot-hot"></span>Hot Pilates</span></td>
-            <td><span class="clase-tag tag-yoga"><span class="agenda-dot dot-yoga"></span>Yoga</span></td>
-            <td><span class="clase-tag tag-hot"><span class="agenda-dot dot-hot"></span>Hot Pilates</span></td>
-            <td><span class="clase-tag tag-yoga"><span class="agenda-dot dot-yoga"></span>Yoga</span></td>
-            <td>—</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="agenda-legend">
-        <div class="legend-item"><span class="agenda-dot dot-yoga"></span><span class="legend-label">Yoga</span></div>
-        <div class="legend-item"><span class="agenda-dot dot-barre"></span><span class="legend-label">Barre</span></div>
-        <div class="legend-item"><span class="agenda-dot dot-pilates"></span><span class="legend-label">Pilates</span></div>
-        <div class="legend-item"><span class="agenda-dot dot-hot"></span><span class="legend-label">Hot Yoga / Hot Pilates</span></div>
-      </div>
+
+    <!-- Leyenda -->
+    <div class="agenda-legend fu">
+      <div class="legend-item"><span class="agenda-dot dot-yoga"></span><span class="legend-label">Yoga</span></div>
+      <div class="legend-item"><span class="agenda-dot dot-barre"></span><span class="legend-label">Barre</span></div>
+      <div class="legend-item"><span class="agenda-dot dot-pilates"></span><span class="legend-label">Pilates</span></div>
+      <div class="legend-item"><span class="agenda-dot dot-hot"></span><span class="legend-label">Hot Room</span></div>
+      <div class="legend-item"><span class="agenda-dot dot-stretching"></span><span class="legend-label">Stretching</span></div>
     </div>
+
+    <!-- Nueva grilla por día -->
+    <div class="agenda-grid fu">
+
+      <!-- LUNES -->
+      <div class="agenda-day">
+        <div class="agenda-day-name"><span data-lang="es">Lunes</span><span data-lang="en" style="display:none">Monday</span></div>
+        <div class="agenda-card pilates"><div class="ac-time">18:00</div><div class="ac-name">Puro Pilates</div></div>
+        <div class="agenda-card hot"><div class="ac-time">18:00</div><div class="ac-name">Yoga Somático</div><div class="ac-sala">Hot Room</div></div>
+        <div class="agenda-card barre"><div class="ac-time">19:00</div><div class="ac-name">Barre Intense</div></div>
+        <div class="agenda-card yoga"><div class="ac-time">19:00</div><div class="ac-name">Vinyasa Flow</div></div>
+      </div>
+
+      <!-- MARTES -->
+      <div class="agenda-day">
+        <div class="agenda-day-name"><span data-lang="es">Martes</span><span data-lang="en" style="display:none">Tuesday</span></div>
+        <div class="agenda-card yoga"><div class="ac-time">18:00</div><div class="ac-name">Power Vinyasa</div></div>
+        <div class="agenda-card hot"><div class="ac-time">18:00</div><div class="ac-name">Hot Yoga</div><div class="ac-sala">Hot Room</div></div>
+        <div class="agenda-card barre"><div class="ac-time">19:00</div><div class="ac-name">Barre</div></div>
+      </div>
+
+      <!-- MIÉRCOLES -->
+      <div class="agenda-day">
+        <div class="agenda-day-name"><span data-lang="es">Miércoles</span><span data-lang="en" style="display:none">Wednesday</span></div>
+        <div class="agenda-card pilates"><div class="ac-time">8:30</div><div class="ac-name">Mat Pilates</div></div>
+        <div class="agenda-card stretching"><div class="ac-time">9:30</div><div class="ac-name">Stretching Yoga</div></div>
+        <div class="agenda-card pilates"><div class="ac-time">18:00</div><div class="ac-name">Pilates GAP</div></div>
+        <div class="agenda-card hot"><div class="ac-time">18:00</div><div class="ac-name">Yoga Somático</div><div class="ac-sala">Hot Room</div></div>
+        <div class="agenda-card stretching"><div class="ac-time">19:00</div><div class="ac-name">Flexibilidad</div></div>
+        <div class="agenda-card yoga"><div class="ac-time">19:00</div><div class="ac-name">Vinyasa Flow</div></div>
+      </div>
+
+      <!-- JUEVES -->
+      <div class="agenda-day">
+        <div class="agenda-day-name"><span data-lang="es">Jueves</span><span data-lang="en" style="display:none">Thursday</span></div>
+        <div class="agenda-card hot"><div class="ac-time">18:00</div><div class="ac-name">Hot Yoga</div><div class="ac-sala">Hot Room</div></div>
+        <div class="agenda-card yoga"><div class="ac-time">19:00</div><div class="ac-name">Hatha Yoga</div></div>
+      </div>
+
+      <!-- VIERNES -->
+      <div class="agenda-day">
+        <div class="agenda-day-name"><span data-lang="es">Viernes</span><span data-lang="en" style="display:none">Friday</span></div>
+        <div class="agenda-card pilates"><div class="ac-time">18:00</div><div class="ac-name">Pilates Mat</div></div>
+        <div class="agenda-card yoga"><div class="ac-time">19:00</div><div class="ac-name">Yoga Relax</div></div>
+      </div>
+
+      <!-- SÁBADO -->
+      <div class="agenda-day">
+        <div class="agenda-day-name"><span data-lang="es">Sábado</span><span data-lang="en" style="display:none">Saturday</span></div>
+        <div class="agenda-card pilates"><div class="ac-time">9:00</div><div class="ac-name">Pilates</div></div>
+        <div class="agenda-card yoga"><div class="ac-time">10:00</div><div class="ac-name">Hatha Din.</div></div>
+      </div>
+
+    </div>
+
+    <p class="agenda-note fu"><span data-lang="es">Grilla sujeta a cambios · Reservá con anticipación</span><span data-lang="en" style="display:none">Schedule subject to changes · Book in advance</span></p>
+
     <div style="text-align:center;margin-top:36px;">
       <a href="https://wa.me/5491130229096" class="btn-dark" target="_blank">
         <span data-lang="es">Reservar clase</span><span data-lang="en" style="display:none">Book a class</span>
@@ -1571,6 +1575,10 @@ function toggleLang() {
     </div>
     <div style="background: var(--beige); border-radius: var(--radius); padding: 28px 24px;">
       <p style="font-family: var(--font-serif); font-size: clamp(15px,1.4vw,17px); line-height: 1.8; color: var(--espresso); font-style: italic;">"Difícil encontrar un espacio así de cuidado y con buen nivel. Muy recomendable."</p>
+      <div style="margin-top: 16px; width: 32px; height: 2px; background: var(--clay);"></div>
+    </div>
+    <div style="background: var(--beige); border-radius: var(--radius); padding: 28px 24px;">
+      <p style="font-family: var(--font-serif); font-size: clamp(15px,1.4vw,17px); line-height: 1.8; color: var(--espresso); font-style: italic;">"Me encanta todo, amamos Bodhi, son lo más."</p>
       <div style="margin-top: 16px; width: 32px; height: 2px; background: var(--clay);"></div>
     </div>
   </div>
