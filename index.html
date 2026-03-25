@@ -3,9 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bodhi Wellness Club — Yoga · Barre · Pilates · Hot Yoga · Buenos Aires</title>
-  <meta name="description" content="Bodhi Wellness Club es un estudio de bienestar en San Telmo, Buenos Aires. Yoga, Barre, Pilates, Hot Yoga infrarrojo y terapias corporales." />
 
+  <!-- SEO básico -->
+  <title>Bodhi Wellness Club | Yoga · Barre · Pilates · Hot Yoga Infrarrojo · San Telmo Buenos Aires</title>
+  <meta name="description" content="Bodhi Wellness Club: estudio de bienestar en San Telmo, Buenos Aires. Yoga, Barre, Mat Pilates, Hot Yoga infrarrojo y terapias corporales. Grupos reducidos, ambiente premium." />
+  <meta name="keywords" content="yoga Buenos Aires, pilates San Telmo, barre Buenos Aires, hot yoga infrarrojo, wellness club Buenos Aires, terapias corporales, studio bienestar" />
+  <meta name="author" content="Bodhi Wellness Club" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bodhiwellnessclub.com/" />
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bodhiwellnessclub.com/" />
+  <meta property="og:title" content="Bodhi Wellness Club | Yoga · Barre · Pilates · Hot Yoga · Buenos Aires" />
+  <meta property="og:description" content="Estudio de bienestar contemporáneo en San Telmo. Yoga, Barre, Pilates, Hot Yoga infrarrojo y terapias corporales. Grupos reducidos, ambiente premium." />
+  <meta property="og:image" content="https://bodhiwellnessclub.com/hero.webp" />
+  <meta property="og:image:width" content="1920" />
+  <meta property="og:image:height" content="1080" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Bodhi Wellness Club" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bodhi Wellness Club | Yoga · Barre · Pilates · Hot Yoga · Buenos Aires" />
+  <meta name="twitter:description" content="Estudio de bienestar contemporáneo en San Telmo. Yoga, Barre, Pilates, Hot Yoga infrarrojo y terapias corporales." />
+  <meta name="twitter:image" content="https://bodhiwellnessclub.com/hero.webp" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Bodhi Wellness Club",
+    "description": "Estudio de bienestar contemporáneo en San Telmo, Buenos Aires. Yoga, Barre, Pilates, Hot Yoga infrarrojo y terapias corporales.",
+    "url": "https://bodhiwellnessclub.com",
+    "logo": "https://bodhiwellnessclub.com/hero.webp",
+    "image": "https://bodhiwellnessclub.com/hero.webp",
+    "telephone": "+5491130229096",
+    "email": "hola@bodhiwellnessclub.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Caseros 594",
+      "addressLocality": "San Telmo",
+      "addressRegion": "Buenos Aires",
+      "addressCountry": "AR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -34.6195,
+      "longitude": -58.3696
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Wednesday","Friday"], "opens": "08:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Thursday"], "opens": "18:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "11:00" }
+    ],
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.instagram.com/bodhiwellnessclub"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Clases y Terapias",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Yoga" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Barre" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mat Pilates" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hot Yoga Infrarrojo" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Terapias Corporales" } }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D96KP0MXV9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,6 +85,10 @@
     gtag('config', 'G-D96KP0MXV9');
   </script>
 
+  <!-- Preload hero image (mejora LCP) -->
+  <link rel="preload" as="image" href="hero.webp" />
+
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -1029,7 +1104,7 @@ function toggleLang() {
 
 <!-- 1. HERO -->
 <section class="hero">
-  <img src="hero.png" alt="Bodhi Wellness Club — San Telmo Buenos Aires" class="hero-img" />
+  <img src="hero.webp" alt="Bodhi Wellness Club — San Telmo Buenos Aires" class="hero-img" />
   <div class="hero-overlay"></div>
   <div class="hero-content fu">
     <p class="hero-brand">San Telmo · Buenos Aires</p>
@@ -1062,7 +1137,7 @@ function toggleLang() {
 
 <!-- 3. SOBRE BODHI -->
 <section class="sobre" id="sobre">
-  <img src="about.png" alt="Bodhi Wellness Club" class="sobre-img fu" />
+  <img src="about.webp" alt="Bodhi Wellness Club — recepción y espacio de bienestar" loading="lazy" class="sobre-img fu" />
   <div class="fu">
     <span class="sec-label"><span data-lang="es">Sobre nosotros</span><span data-lang="en" style="display:none">About us</span></span>
     <h2 class="sec-title">
@@ -1093,7 +1168,7 @@ function toggleLang() {
   </div>
   <div class="disc-grid disc-grid-5">
     <div class="disc-card fu" onclick="openPractica('p-yoga')" style="cursor:pointer;">
-      <img src="yoga.png" alt="Yoga" class="disc-card-img" />
+      <img src="yoga.webp" alt="Clase de Yoga en Bodhi Wellness Club San Telmo" loading="lazy" class="disc-card-img" />
       <div class="disc-card-body">
         <p class="disc-tag"><span data-lang="es">Práctica</span><span data-lang="en" style="display:none">Practice</span></p>
         <h3 class="disc-name">Yoga</h3>
@@ -1102,7 +1177,7 @@ function toggleLang() {
       </div>
     </div>
     <div class="disc-card fu" onclick="openPractica('p-barre')" style="cursor:pointer;">
-      <img src="barre.png" alt="Barre" class="disc-card-img" />
+      <img src="barre.webp" alt="Clase de Barre en Bodhi Wellness Club Buenos Aires" loading="lazy" class="disc-card-img" />
       <div class="disc-card-body">
         <p class="disc-tag"><span data-lang="es">Práctica</span><span data-lang="en" style="display:none">Practice</span></p>
         <h3 class="disc-name">Barre</h3>
@@ -1111,7 +1186,7 @@ function toggleLang() {
       </div>
     </div>
     <div class="disc-card fu" onclick="openPractica('p-pilates')" style="cursor:pointer;">
-      <img src="pilates.png" alt="Pilates" class="disc-card-img" />
+      <img src="pilates.webp" alt="Clase de Mat Pilates en Bodhi Wellness Club" loading="lazy" class="disc-card-img" />
       <div class="disc-card-body">
         <p class="disc-tag"><span data-lang="es">Práctica</span><span data-lang="en" style="display:none">Practice</span></p>
         <h3 class="disc-name">Pilates</h3>
@@ -1120,7 +1195,7 @@ function toggleLang() {
       </div>
     </div>
     <div class="disc-card fu" onclick="openPractica('p-hot')" style="cursor:pointer;">
-      <img src="hotroom.png" alt="Hot Yoga" class="disc-card-img" />
+      <img src="hotroom.webp" alt="Hot Room con calor infrarrojo en Bodhi Wellness Club" loading="lazy" class="disc-card-img" />
       <div class="disc-card-body">
         <p class="disc-tag" style="color:var(--hot-light);">Hot Room</p>
         <h3 class="disc-name">Hot Yoga <span style="font-size:13px;color:var(--taupe);font-weight:300;">· Hot Pilates</span></h3>
@@ -1129,7 +1204,7 @@ function toggleLang() {
       </div>
     </div>
     <div class="disc-card fu" onclick="document.getElementById('terapias').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
-      <img src="masajes.png" alt="Terapias" class="disc-card-img" />
+      <img src="masajes.webp" alt="Terapias corporales y masajes en Bodhi Wellness Club" loading="lazy" class="disc-card-img" />
       <div class="disc-card-body">
         <p class="disc-tag"><span data-lang="es">Terapias</span><span data-lang="en" style="display:none">Therapies</span></p>
         <h3 class="disc-name"><span data-lang="es">Terapias</span><span data-lang="en" style="display:none">Therapies</span></h3>
@@ -1255,7 +1330,7 @@ function toggleLang() {
 <section class="hotroom" id="hotroom">
   <div class="hotroom-inner">
     <div class="hotroom-img-wrap">
-      <img src="hotroom.png" alt="Hot Room — Bodhi Wellness Club" class="hotroom-img" />
+      <img src="hotroom.webp" alt="Sala Hot Yoga infrarrojo en Bodhi Wellness Club San Telmo" loading="lazy" class="hotroom-img" />
       <div class="hotroom-glow"></div>
     </div>
     <div class="hotroom-content fu">
@@ -1427,11 +1502,11 @@ function toggleLang() {
     </p>
   </div>
   <div class="space-grid fu">
-    <img src="hero.png" alt="Bodhi Studio" class="space-img tall" />
-    <img src="about.png" alt="Bodhi Studio" class="space-img med" />
-    <img src="hotroom.png" alt="Hot Room" class="space-img med" />
-    <img src="yoga.png" alt="Yoga" class="space-img med" />
-    <img src="barre.png" alt="Barre" class="space-img med" />
+    <img src="hero.webp" alt="Bodhi Studio" class="space-img tall" />
+    <img src="about.webp" alt="Bodhi Studio" class="space-img med" />
+    <img src="hotroom.webp" alt="Hot Room" class="space-img med" />
+    <img src="yoga.webp" alt="Yoga" class="space-img med" />
+    <img src="barre.webp" alt="Barre" class="space-img med" />
   </div>
 </section>
 
@@ -1453,21 +1528,21 @@ function toggleLang() {
     </div>
     <div class="journal-grid">
       <div class="j-card fu" onclick="openBlog('b1')" style="cursor:pointer;">
-        <img src="hotroom.png" alt="Hot Yoga" class="j-card-img" />
+        <img src="hotroom.webp" alt="Hot Yoga infrarrojo en Bodhi Wellness Club" loading="lazy" class="j-card-img" />
         <p class="j-cat">Hot Room</p>
         <h3 class="j-title"><span data-lang="es">Qué es el Hot Yoga infrarrojo y por qué está creciendo en todo el mundo</span><span data-lang="en" style="display:none">What is infrared Hot Yoga and why it's growing worldwide</span></h3>
         <p class="j-excerpt"><span data-lang="es">El calor infrarrojo actúa diferente al calor convencional. Descubrí por qué cada vez más estudios de bienestar adoptan esta tecnología.</span><span data-lang="en" style="display:none">Infrared heat acts differently to conventional heat. Discover why more and more wellness studios are adopting this technology.</span></p>
         <span class="j-read" onclick="openBlog('b1')"><span data-lang="es">Leer más</span><span data-lang="en" style="display:none">Read more</span> →</span>
       </div>
       <div class="j-card fu" onclick="openBlog('b2')" style="cursor:pointer;">
-        <img src="yoga.png" alt="Movimiento lento" class="j-card-img" />
+        <img src="yoga.webp" alt="Yoga somático y movimiento lento en Bodhi" loading="lazy" class="j-card-img" />
         <p class="j-cat"><span data-lang="es">Movimiento</span><span data-lang="en" style="display:none">Movement</span></p>
         <h3 class="j-title"><span data-lang="es">El poder del movimiento lento</span><span data-lang="en" style="display:none">The power of slow movement</span></h3>
         <p class="j-excerpt"><span data-lang="es">Por qué prácticas como yoga somático y stretching profundo ayudan a regular el sistema nervioso.</span><span data-lang="en" style="display:none">Why practices like somatic yoga and deep stretching help regulate the nervous system.</span></p>
         <span class="j-read" onclick="openBlog('b2')"><span data-lang="es">Leer más</span><span data-lang="en" style="display:none">Read more</span> →</span>
       </div>
       <div class="j-card fu" onclick="openBlog('b3')" style="cursor:pointer;">
-        <img src="meditacion.png" alt="Cuerpo consciente" class="j-card-img" />
+        <img src="meditacion.webp" alt="Meditación y movimiento consciente en Bodhi" loading="lazy" class="j-card-img" />
         <p class="j-cat"><span data-lang="es">Filosofía</span><span data-lang="en" style="display:none">Philosophy</span></p>
         <h3 class="j-title"><span data-lang="es">El cuerpo como lugar de escucha</span><span data-lang="en" style="display:none">The body as a place of listening</span></h3>
         <p class="j-excerpt"><span data-lang="es">La importancia del movimiento consciente en el bienestar moderno y por qué cada vez más personas eligen prácticas somáticas.</span><span data-lang="en" style="display:none">The importance of conscious movement in modern wellbeing and why more people choose somatic practices.</span></p>
@@ -1692,7 +1767,7 @@ function toggleLang() {
 <div class="blog-overlay" id="b1">
   <div class="blog-modal">
     <button class="b-x" onclick="closeBlog('b1')">✕</button>
-    <img src="hotroom.png" class="b-hero" alt="Hot Yoga">
+    <img src="hotroom.webp" class="b-hero" alt="Hot Yoga">
     <button class="b-back" onclick="closeBlog('b1')">← <span data-lang="es">Volver</span><span data-lang="en" style="display:none">Back</span></button>
     <div class="b-body">
       <p class="b-cat">Hot Room</p>
@@ -1718,7 +1793,7 @@ function toggleLang() {
 <div class="blog-overlay" id="b2">
   <div class="blog-modal">
     <button class="b-x" onclick="closeBlog('b2')">✕</button>
-    <img src="yoga.png" class="b-hero" alt="Movimiento lento">
+    <img src="yoga.webp" class="b-hero" alt="Movimiento lento">
     <button class="b-back" onclick="closeBlog('b2')">← <span data-lang="es">Volver</span><span data-lang="en" style="display:none">Back</span></button>
     <div class="b-body">
       <p class="b-cat"><span data-lang="es">Movimiento</span><span data-lang="en" style="display:none">Movement</span></p>
@@ -1744,7 +1819,7 @@ function toggleLang() {
 <div class="blog-overlay" id="b3">
   <div class="blog-modal">
     <button class="b-x" onclick="closeBlog('b3')">✕</button>
-    <img src="meditacion.png" class="b-hero" alt="Cuerpo consciente">
+    <img src="meditacion.webp" class="b-hero" alt="Cuerpo consciente">
     <button class="b-back" onclick="closeBlog('b3')">← <span data-lang="es">Volver</span><span data-lang="en" style="display:none">Back</span></button>
     <div class="b-body">
       <p class="b-cat"><span data-lang="es">Filosofía</span><span data-lang="en" style="display:none">Philosophy</span></p>
@@ -1784,7 +1859,7 @@ function toggleLang() {
     </a>
   </div>
   <div class="pm-hero">
-    <img src="yoga.png" alt="Yoga en Bodhi" class="pm-hero-img" />
+    <img src="yoga.webp" alt="Yoga en Bodhi" class="pm-hero-img" />
     <div class="pm-hero-overlay"></div>
     <div class="pm-hero-content">
       <span class="pm-hero-label"><span data-lang="es">Práctica</span><span data-lang="en" style="display:none">Practice</span></span>
@@ -1881,7 +1956,7 @@ function toggleLang() {
     </a>
   </div>
   <div class="pm-hero">
-    <img src="barre.png" alt="Barre en Bodhi" class="pm-hero-img" />
+    <img src="barre.webp" alt="Barre en Bodhi" class="pm-hero-img" />
     <div class="pm-hero-overlay"></div>
     <div class="pm-hero-content">
       <span class="pm-hero-label"><span data-lang="es">Práctica</span><span data-lang="en" style="display:none">Practice</span></span>
@@ -1961,7 +2036,7 @@ function toggleLang() {
     </a>
   </div>
   <div class="pm-hero">
-    <img src="pilates.png" alt="Pilates en Bodhi" class="pm-hero-img" />
+    <img src="pilates.webp" alt="Pilates en Bodhi" class="pm-hero-img" />
     <div class="pm-hero-overlay"></div>
     <div class="pm-hero-content">
       <span class="pm-hero-label"><span data-lang="es">Práctica</span><span data-lang="en" style="display:none">Practice</span></span>
@@ -2041,7 +2116,7 @@ function toggleLang() {
     </a>
   </div>
   <div class="pm-hero">
-    <img src="hotroom.png" alt="Hot Yoga en Bodhi" class="pm-hero-img" />
+    <img src="hotroom.webp" alt="Hot Yoga en Bodhi" class="pm-hero-img" />
     <div class="pm-hero-overlay" style="background:linear-gradient(to bottom,rgba(0,0,0,.1) 0%,rgba(15,6,5,.8) 100%);"></div>
     <div class="pm-hero-content">
       <span class="pm-hero-label" style="color:var(--hot-light);">Hot Room</span>
