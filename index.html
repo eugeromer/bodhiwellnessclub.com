@@ -352,6 +352,7 @@
     .ter-num { font-family: var(--font-sans); font-size: 10px; font-weight: 400; letter-spacing: .18em; color: var(--clay); margin-bottom: 12px; }
     .ter-name { font-family: var(--font-sans); font-size: 15px; font-weight: 500; color: var(--espresso); margin-bottom: 8px; letter-spacing: .01em; }
     .ter-desc { font-family: var(--font-sans); font-size: 13px; font-weight: 300; line-height: 1.75; color: var(--taupe); }
+    .ter-price { font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--clay); margin-top: 10px; }
 
     /* ── AGENDA ─────────────────────────────── */
     .agenda-wrap {
@@ -991,9 +992,7 @@ function toggleLang() {
     <li><a href="#practicas"><span data-lang="es">Prácticas</span><span data-lang="en" style="display:none">Practices</span></a></li>
     <li><a href="#terapias"><span data-lang="es">Terapias</span><span data-lang="en" style="display:none">Therapies</span></a></li>
     <li><a href="#hotroom">Hot Room</a></li>
-    <li><a href="#journal">Wellness Journal</a></li>
-    <li><a href="#sobre"><span data-lang="es">Nosotros</span><span data-lang="en" style="display:none">About</span></a></li>
-    <li><a href="#membresias"><span data-lang="es">Membresías</span><span data-lang="en" style="display:none">Memberships</span></a></li>
+    <li><a href="#membresias"><span data-lang="es">Precios</span><span data-lang="en" style="display:none">Pricing</span></a></li>
   </ul>
   <div class="nav-right">
     <button class="lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
@@ -1010,9 +1009,7 @@ function toggleLang() {
   <a href="#practicas" onclick="closeMob()"><span data-lang="es">Prácticas</span><span data-lang="en" style="display:none">Practices</span></a>
   <a href="#terapias" onclick="closeMob()"><span data-lang="es">Terapias</span><span data-lang="en" style="display:none">Therapies</span></a>
   <a href="#hotroom" onclick="closeMob()">Hot Room</a>
-  <a href="#journal" onclick="closeMob()">Wellness Journal</a>
-  <a href="#sobre" onclick="closeMob()"><span data-lang="es">Nosotros</span><span data-lang="en" style="display:none">About</span></a>
-  <a href="#membresias" onclick="closeMob()"><span data-lang="es">Membresías</span><span data-lang="en" style="display:none">Memberships</span></a>
+  <a href="#membresias" onclick="closeMob()"><span data-lang="es">Precios</span><span data-lang="en" style="display:none">Pricing</span></a>
   <a href="https://wa.me/5491130229096" target="_blank"><span data-lang="es">Reservar clase</span><span data-lang="en" style="display:none">Book a class</span></a>
 </div>
 
@@ -1021,18 +1018,18 @@ function toggleLang() {
   <img src="hero.png" alt="Bodhi Wellness Club — San Telmo Buenos Aires" class="hero-img" />
   <div class="hero-overlay"></div>
   <div class="hero-content fu">
-    <p class="hero-brand">San Telmo</p>
+    <p class="hero-brand">San Telmo · Buenos Aires</p>
     <h1 class="hero-headline">
       BODHI<br><em>Wellness Club.</em>
     </h1>
     <p class="hero-disc">Yoga · Barre · Pilates · Hot Yoga <span data-lang="es">infrarrojo</span><span data-lang="en" style="display:none">infrared</span></p>
     <p class="hero-tag">
-      <span data-lang="es">Un espacio para moverte, respirar y volver a tu cuerpo.</span>
-      <span data-lang="en" style="display:none">A space to move, breathe and return to your body.</span>
+      <span data-lang="es">Encontrá tu práctica. Empezá esta semana.</span>
+      <span data-lang="en" style="display:none">Find your practice. Start this week.</span>
     </p>
     <div class="hero-btns">
-      <a href="https://wa.me/5491130229096" class="btn-w" target="_blank">
-        <span data-lang="es">Reservar clase</span><span data-lang="en" style="display:none">Book a class</span>
+      <a href="#membresias" class="btn-w">
+        <span data-lang="es">Ver precios</span><span data-lang="en" style="display:none">See pricing</span>
       </a>
       <a href="#practicas" class="btn-outline">
         <span data-lang="es">Explorar prácticas</span><span data-lang="en" style="display:none">Explore practices</span>
@@ -1308,13 +1305,14 @@ function toggleLang() {
       </div>
     </div>
     <div class="terapias-grid fu">
-      <div class="ter-item"><p class="ter-num">01</p><h3 class="ter-name"><span data-lang="es">Masaje descontracturante</span><span data-lang="en" style="display:none">Deep tissue massage</span></h3><p class="ter-desc"><span data-lang="es">Libera tensiones musculares profundas y alivia el dolor crónico.</span><span data-lang="en" style="display:none">Releases deep muscular tension and relieves chronic pain.</span></p></div>
-      <div class="ter-item"><p class="ter-num">02</p><h3 class="ter-name"><span data-lang="es">Drenaje linfático</span><span data-lang="en" style="display:none">Lymphatic drainage</span></h3><p class="ter-desc"><span data-lang="es">Activa la circulación y reduce la retención de líquidos.</span><span data-lang="en" style="display:none">Activates circulation and reduces fluid retention.</span></p></div>
-      <div class="ter-item"><p class="ter-num">03</p><h3 class="ter-name">Maderoterapia</h3><p class="ter-desc"><span data-lang="es">Técnica con elementos de madera para modelar y tonificar el cuerpo.</span><span data-lang="en" style="display:none">Wood therapy technique to shape and tone the body.</span></p></div>
-      <div class="ter-item"><p class="ter-num">04</p><h3 class="ter-name"><span data-lang="es">Reflexología</span><span data-lang="en" style="display:none">Reflexology</span></h3><p class="ter-desc"><span data-lang="es">Estimulación de puntos reflejos en pies y manos para el equilibrio del organismo.</span><span data-lang="en" style="display:none">Stimulation of reflex points in feet and hands for body balance.</span></p></div>
-      <div class="ter-item"><p class="ter-num">05</p><h3 class="ter-name"><span data-lang="es">Limpieza facial</span><span data-lang="en" style="display:none">Facial cleansing</span></h3><p class="ter-desc"><span data-lang="es">Tratamiento profundo para limpiar y renovar la piel del rostro.</span><span data-lang="en" style="display:none">Deep treatment to cleanse and renew facial skin.</span></p></div>
-      <div class="ter-item"><p class="ter-num">06</p><h3 class="ter-name"><span data-lang="es">Masaje facial</span><span data-lang="en" style="display:none">Facial massage</span></h3><p class="ter-desc"><span data-lang="es">Relajación profunda del rostro, cuello y escote.</span><span data-lang="en" style="display:none">Deep relaxation of face, neck and décolleté.</span></p></div>
-      <div class="ter-item"><p class="ter-num">07</p><h3 class="ter-name"><span data-lang="es">Exfoliación corporal</span><span data-lang="en" style="display:none">Body exfoliation</span></h3><p class="ter-desc"><span data-lang="es">Renovación de la piel mediante técnicas de exfoliación profunda e hidratación.</span><span data-lang="en" style="display:none">Skin renewal through deep exfoliation and hydration techniques.</span></p></div>
+      <div class="ter-item"><p class="ter-num">01</p><h3 class="ter-name"><span data-lang="es">Masaje descontracturante</span><span data-lang="en" style="display:none">Deep tissue massage</span></h3><p class="ter-desc"><span data-lang="es">Libera tensiones musculares profundas y alivia el dolor crónico.</span><span data-lang="en" style="display:none">Releases deep muscular tension and relieves chronic pain.</span></p><p class="ter-price">$45.000</p></div>
+      <div class="ter-item"><p class="ter-num">02</p><h3 class="ter-name"><span data-lang="es">Drenaje linfático</span><span data-lang="en" style="display:none">Lymphatic drainage</span></h3><p class="ter-desc"><span data-lang="es">Activa la circulación y reduce la retención de líquidos.</span><span data-lang="en" style="display:none">Activates circulation and reduces fluid retention.</span></p><p class="ter-price">$40.000</p></div>
+      <div class="ter-item"><p class="ter-num">03</p><h3 class="ter-name">Maderoterapia</h3><p class="ter-desc"><span data-lang="es">Técnica con elementos de madera para modelar y tonificar el cuerpo.</span><span data-lang="en" style="display:none">Wood therapy technique to shape and tone the body.</span></p><p class="ter-price">$45.000</p></div>
+      <div class="ter-item"><p class="ter-num">04</p><h3 class="ter-name"><span data-lang="es">Reflexología</span><span data-lang="en" style="display:none">Reflexology</span></h3><p class="ter-desc"><span data-lang="es">Estimulación de puntos reflejos en pies y manos para el equilibrio del organismo.</span><span data-lang="en" style="display:none">Stimulation of reflex points in feet and hands for body balance.</span></p><p class="ter-price">$40.000</p></div>
+      <div class="ter-item"><p class="ter-num">05</p><h3 class="ter-name"><span data-lang="es">Limpieza facial</span><span data-lang="en" style="display:none">Facial cleansing</span></h3><p class="ter-desc"><span data-lang="es">Tratamiento profundo para limpiar y renovar la piel del rostro.</span><span data-lang="en" style="display:none">Deep treatment to cleanse and renew facial skin.</span></p><p class="ter-price">$45.000</p></div>
+      <div class="ter-item"><p class="ter-num">06</p><h3 class="ter-name"><span data-lang="es">Masaje facial</span><span data-lang="en" style="display:none">Facial massage</span></h3><p class="ter-desc"><span data-lang="es">Relajación profunda del rostro, cuello y escote.</span><span data-lang="en" style="display:none">Deep relaxation of face, neck and décolleté.</span></p><p class="ter-price">$35.000</p></div>
+      <div class="ter-item"><p class="ter-num">07</p><h3 class="ter-name"><span data-lang="es">Exfoliación corporal</span><span data-lang="en" style="display:none">Body exfoliation</span></h3><p class="ter-desc"><span data-lang="es">Renovación de la piel mediante técnicas de exfoliación profunda e hidratación.</span><span data-lang="en" style="display:none">Skin renewal through deep exfoliation and hydration techniques.</span></p><p class="ter-price">$50.000</p></div>
+      <div class="ter-item"><p class="ter-num">08</p><h3 class="ter-name">Dry Body Brush</h3><p class="ter-desc"><span data-lang="es">Técnica de cepillado en seco que estimula la circulación, activa el sistema linfático y renueva la piel.</span><span data-lang="en" style="display:none">Dry brushing technique that stimulates circulation, activates the lymphatic system and renews the skin.</span></p><p class="ter-price">$40.000</p></div>
     </div>
   </div>
 </section>
@@ -1548,6 +1546,36 @@ function toggleLang() {
 </section>
 
 <!-- MEMBRESÍAS -->
+<!-- TESTIMONIOS -->
+<section style="padding: var(--pad) var(--side); max-width:1240px; margin:0 auto;">
+  <div class="fu" style="text-align:center; margin-bottom: clamp(32px,5vw,60px);">
+    <span class="sec-label"><span data-lang="es">Lo que dicen</span><span data-lang="en" style="display:none">What they say</span></span>
+    <h2 class="sec-title"><span data-lang="es">Experiencias <em>reales</em></span><span data-lang="en" style="display:none">Real <em>experiences</em></span></h2>
+  </div>
+  <div class="fu" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    <div style="background: var(--beige); border-radius: var(--radius); padding: 28px 24px;">
+      <p style="font-family: var(--font-serif); font-size: clamp(15px,1.4vw,17px); line-height: 1.8; color: var(--espresso); font-style: italic;">"Llegué en un momento caótico y me encontré con algo mucho más profundo que una clase. Siempre me voy distinta."</p>
+      <div style="margin-top: 16px; width: 32px; height: 2px; background: var(--clay);"></div>
+    </div>
+    <div style="background: var(--beige); border-radius: var(--radius); padding: 28px 24px;">
+      <p style="font-family: var(--font-serif); font-size: clamp(15px,1.4vw,17px); line-height: 1.8; color: var(--espresso); font-style: italic;">"Probé varios lugares y esto es otra cosa. Todo está cuidado. Salís con otra energía."</p>
+      <div style="margin-top: 16px; width: 32px; height: 2px; background: var(--clay);"></div>
+    </div>
+    <div style="background: var(--beige); border-radius: var(--radius); padding: 28px 24px;">
+      <p style="font-family: var(--font-serif); font-size: clamp(15px,1.4vw,17px); line-height: 1.8; color: var(--espresso); font-style: italic;">"Se nota que hay criterio detrás. No es solo lindo, las clases son realmente buenas."</p>
+      <div style="margin-top: 16px; width: 32px; height: 2px; background: var(--clay);"></div>
+    </div>
+    <div style="background: var(--beige); border-radius: var(--radius); padding: 28px 24px;">
+      <p style="font-family: var(--font-serif); font-size: clamp(15px,1.4vw,17px); line-height: 1.8; color: var(--espresso); font-style: italic;">"Hay días que llego agotada y en una hora bajo mil cambios. Es mi lugar."</p>
+      <div style="margin-top: 16px; width: 32px; height: 2px; background: var(--clay);"></div>
+    </div>
+    <div style="background: var(--beige); border-radius: var(--radius); padding: 28px 24px;">
+      <p style="font-family: var(--font-serif); font-size: clamp(15px,1.4vw,17px); line-height: 1.8; color: var(--espresso); font-style: italic;">"Difícil encontrar un espacio así de cuidado y con buen nivel. Muy recomendable."</p>
+      <div style="margin-top: 16px; width: 32px; height: 2px; background: var(--clay);"></div>
+    </div>
+  </div>
+</section>
+
 <section class="memb-wrap" id="membresias">
   <div class="memb-header fu">
     <span class="sec-label"><span data-lang="es">Planes y membresías</span><span data-lang="en" style="display:none">Plans & memberships</span></span>
