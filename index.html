@@ -98,8 +98,8 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --clay:       #C79B86;
-      --taupe:      #8A7A70;
+      --clay:       #A67860;
+      --taupe:      #5C4F48;
       --beige:      #EDE4DA;
       --sand:       #D9C9B8;
       --espresso:   #3A2F2B;
@@ -145,14 +145,14 @@
     }
     .nav-links { display: flex; align-items: center; gap: clamp(16px,2vw,30px); list-style: none; }
     .nav-links a {
-      font-family: var(--font-sans); font-size: 11px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400;
       letter-spacing: .14em; text-transform: uppercase;
       color: var(--espresso); text-decoration: none; transition: color var(--tr);
     }
     .nav-links a:hover { color: var(--clay); }
     .nav-right { display: flex; align-items: center; gap: 12px; }
     .nav-cta {
-      font-family: var(--font-sans); font-size: 11px; font-weight: 500;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 500;
       letter-spacing: .13em; text-transform: uppercase;
       background: var(--espresso); color: var(--white) !important;
       padding: 9px 20px; border-radius: 100px; text-decoration: none;
@@ -160,7 +160,7 @@
     }
     .nav-cta:hover { background: var(--clay) !important; }
     .lang-btn {
-      font-family: var(--font-sans); font-size: 11px; font-weight: 500;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 500;
       letter-spacing: .12em; background: transparent;
       border: 1px solid rgba(58,47,43,.28); color: var(--espresso);
       padding: 7px 13px; border-radius: 100px; cursor: pointer;
@@ -210,7 +210,7 @@
 
     /* Brand name — pequeño, tracking amplio */
     .hero-brand {
-      font-family: var(--font-sans); font-size: 12px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 16px; font-weight: 400;
       letter-spacing: .36em; text-transform: uppercase;
       color: rgba(255,255,255,.65); margin-bottom: 20px; display: block;
     }
@@ -225,7 +225,7 @@
 
     /* Subtexto disciplinas — más grande y alineado con headline */
     .hero-disc {
-      font-family: var(--font-sans); font-size: 13px; font-weight: 300;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 300;
       letter-spacing: .18em; text-transform: uppercase;
       color: rgba(255,255,255,.6); margin-bottom: 18px; display: block;
     }
@@ -238,14 +238,14 @@
     }
     .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-w {
-      font-size: 11px; font-weight: 500; letter-spacing: .13em; text-transform: uppercase;
+      font-size: 15px; font-weight: 500; letter-spacing: .13em; text-transform: uppercase;
       background: var(--white); color: var(--espresso);
       padding: 13px 26px; border-radius: 100px; text-decoration: none;
       border: 1px solid transparent; transition: all var(--tr);
     }
     .btn-w:hover { background: var(--clay); color: var(--white); }
     .btn-outline {
-      font-size: 11px; font-weight: 400; letter-spacing: .13em; text-transform: uppercase;
+      font-size: 15px; font-weight: 400; letter-spacing: .13em; text-transform: uppercase;
       background: transparent; color: var(--white);
       padding: 13px 26px; border-radius: 100px; text-decoration: none;
       border: 1px solid rgba(255,255,255,.45); transition: all var(--tr);
@@ -267,7 +267,7 @@
 
     /* ── SHARED HELPERS — tipo escala unificada ─ */
     .sec-label {
-      font-family: var(--font-sans); font-size: 10px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400;
       letter-spacing: .26em; text-transform: uppercase; color: var(--clay);
       margin-bottom: 20px; display: block;
     }
@@ -278,10 +278,10 @@
     .sec-title em { font-style: italic; }
     .sec-body {
       font-family: var(--font-sans); font-size: 15px; font-weight: 300;
-      line-height: 1.95; color: var(--taupe); margin-bottom: 18px;
+      line-height: 1.95; color: var(--taupe); font-weight: 400; margin-bottom: 18px;
     }
     .btn-dark {
-      display: inline-flex; font-size: 11px; font-weight: 500;
+      display: inline-flex; font-size: 15px; font-weight: 500;
       letter-spacing: .13em; text-transform: uppercase;
       background: var(--espresso); color: var(--white);
       padding: 12px 26px; border-radius: 100px; text-decoration: none;
@@ -289,7 +289,7 @@
     }
     .btn-dark:hover { background: var(--clay); }
     .btn-clay {
-      display: inline-flex; font-size: 11px; font-weight: 500;
+      display: inline-flex; font-size: 15px; font-weight: 500;
       letter-spacing: .13em; text-transform: uppercase;
       background: var(--clay); color: var(--white);
       padding: 12px 26px; border-radius: 100px; text-decoration: none;
@@ -311,7 +311,7 @@
       border-top: 1px solid var(--sand);
     }
     .stat-n { font-family: var(--font-serif); font-size: 40px; font-weight: 300; color: var(--espresso); line-height: 1; margin-bottom: 6px; }
-    .stat-l { font-family: var(--font-sans); font-size: 10px; font-weight: 400; letter-spacing: .16em; text-transform: uppercase; color: var(--taupe); }
+    .stat-l { font-family: var(--font-sans); font-size: 15px; font-weight: 400; letter-spacing: .16em; text-transform: uppercase; color: var(--taupe); }
 
     /* ── DISCIPLINAS ────────────────────────── */
     .disciplinas {
@@ -330,13 +330,14 @@
     .disc-card {
       background: var(--white); border-radius: var(--radius);
       overflow: hidden; transition: transform var(--tr), box-shadow var(--tr);
+      text-decoration: none; display: block; color: inherit;
     }
     .disc-card:hover { transform: translateY(-5px); box-shadow: 0 18px 48px rgba(58,47,43,.11); }
     .disc-card-img { width: 100%; height: 260px; object-fit: cover; display: block; }
     .disc-card-body { padding: 24px; }
-    .disc-tag { font-family: var(--font-sans); font-size: 10px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; color: var(--clay); margin-bottom: 10px; }
+    .disc-tag { font-family: var(--font-sans); font-size: 15px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; color: var(--clay); margin-bottom: 10px; }
     .disc-name { font-family: var(--font-sans); font-size: 16px; font-weight: 500; color: var(--espresso); margin-bottom: 10px; letter-spacing: .02em; }
-    .disc-text { font-family: var(--font-sans); font-size: 13px; font-weight: 300; line-height: 1.75; color: var(--taupe); }
+    .disc-text { font-family: var(--font-sans); font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--taupe); font-weight: 400; }
     .disc-footer { max-width: 1240px; margin: 36px auto 0; text-align: center; }
 
     /* ── HOT ROOM ───────────────────────────── */
@@ -358,11 +359,11 @@
       display: flex; flex-direction: column; justify-content: center;
     }
     .hot-label {
-      font-family: var(--font-sans); font-size: 10px; font-weight: 400; letter-spacing: .28em;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400; letter-spacing: .28em;
       text-transform: uppercase; color: var(--hot-light); margin-bottom: 10px;
     }
     .hot-sublabel {
-      font-family: var(--font-serif); font-size: 14px; font-style: italic;
+      font-family: var(--font-serif); font-size: 16px; font-style: italic;
       color: rgba(255,255,255,.35); margin-bottom: 28px; letter-spacing: .04em;
     }
     .hot-title {
@@ -371,7 +372,7 @@
     }
     .hot-title em { font-style: italic; color: var(--hot-light); }
     .hot-body {
-      font-family: var(--font-sans); font-size: 15px; font-weight: 300; line-height: 1.9;
+      font-family: var(--font-sans); font-size: 16px; font-weight: 400; line-height: 1.9;
       color: rgba(255,255,255,.55); margin-bottom: 14px;
     }
     .hot-benefits {
@@ -388,17 +389,17 @@
       font-size: 15px; flex-shrink: 0;
     }
     .hot-benefit-text {
-      font-family: var(--font-sans); font-size: 13px; font-weight: 300; letter-spacing: .04em;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 300; letter-spacing: .04em;
       color: rgba(255,255,255,.65);
     }
     .hot-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px; }
     .hot-pill {
-      font-size: 10px; font-weight: 400; letter-spacing: .12em; text-transform: uppercase;
+      font-size: 15px; font-weight: 400; letter-spacing: .12em; text-transform: uppercase;
       border: 1px solid rgba(196,83,58,.35); color: var(--hot-light);
       padding: 7px 16px; border-radius: 100px;
     }
     .btn-hot {
-      display: inline-flex; font-size: 11px; font-weight: 500;
+      display: inline-flex; font-size: 15px; font-weight: 500;
       letter-spacing: .13em; text-transform: uppercase;
       background: var(--hot); color: var(--white);
       padding: 13px 28px; border-radius: 100px; text-decoration: none;
@@ -425,10 +426,10 @@
       transition: background var(--tr);
     }
     .ter-item:hover { background: var(--beige); }
-    .ter-num { font-family: var(--font-sans); font-size: 10px; font-weight: 400; letter-spacing: .18em; color: var(--clay); margin-bottom: 12px; }
+    .ter-num { font-family: var(--font-sans); font-size: 15px; font-weight: 400; letter-spacing: .18em; color: var(--clay); margin-bottom: 12px; }
     .ter-name { font-family: var(--font-sans); font-size: 15px; font-weight: 500; color: var(--espresso); margin-bottom: 8px; letter-spacing: .01em; }
-    .ter-desc { font-family: var(--font-sans); font-size: 13px; font-weight: 300; line-height: 1.75; color: var(--taupe); }
-    .ter-price { font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--clay); margin-top: 10px; }
+    .ter-desc { font-family: var(--font-sans); font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--taupe); font-weight: 400; }
+    .ter-price { font-family: var(--font-sans); font-size: 16px; font-weight: 500; color: var(--clay); margin-top: 10px; }
 
     /* ── AGENDA ─────────────────────────────── */
     .agenda-wrap {
@@ -441,7 +442,7 @@
       display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 32px;
     }
     .legend-item { display: flex; align-items: center; gap: 7px; }
-    .legend-label { font-size: 11px; font-weight: 300; color: var(--taupe); letter-spacing: .06em; }
+    .legend-label { font-size: 15px; font-weight: 400; color: var(--taupe); letter-spacing: .06em; }
     .agenda-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
     .dot-yoga      { background: #4a7a60; }
     .dot-barre     { background: #8a4a35; }
@@ -478,19 +479,19 @@
     .agenda-card.stretching{ background: rgba(110,96,128,.08);  border-color: #6e6080; }
 
     .ac-time {
-      font-size: 9px; font-weight: 500; color: var(--clay);
+      font-size: 16px; font-weight: 500; color: var(--clay);
       letter-spacing: .05em; line-height: 1; margin-bottom: 3px;
     }
     .ac-name {
-      font-size: 9px; color: var(--taupe);
+      font-size: 16px; color: var(--taupe);
       letter-spacing: .04em; text-transform: uppercase; line-height: 1.25;
     }
     .ac-sala {
-      font-size: 8px; color: var(--hot); letter-spacing: .08em;
+      font-size: 15px; color: var(--hot); letter-spacing: .08em;
       text-transform: uppercase; margin-top: 2px;
     }
     .agenda-note {
-      font-size: 11px; font-style: italic; color: var(--taupe);
+      font-size: 15px; font-style: italic; color: var(--taupe);
       letter-spacing: .04em; margin-top: 20px; text-align: center;
     }
 
@@ -534,11 +535,11 @@
     }
     .j-card:first-child .j-card-img { height: 400px; }
     .j-card:not(:first-child) .j-card-img { height: 240px; }
-    .j-cat { font-family: var(--font-sans); font-size: 10px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: var(--clay); margin-bottom: 10px; }
+    .j-cat { font-family: var(--font-sans); font-size: 15px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: var(--clay); margin-bottom: 10px; }
     .j-title { font-family: var(--font-serif); font-size: clamp(19px,1.8vw,25px); font-weight: 400; color: var(--espresso); line-height: 1.25; margin-bottom: 12px; }
-    .j-excerpt { font-family: var(--font-sans); font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--taupe); margin-bottom: 16px; }
+    .j-excerpt { font-family: var(--font-sans); font-size: 16px; font-weight: 400; line-height: 1.8; color: var(--taupe); margin-bottom: 16px; }
     .j-read {
-      font-family: var(--font-sans); font-size: 11px; font-weight: 400; letter-spacing: .1em;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400; letter-spacing: .1em;
       color: var(--clay); text-decoration: none;
       display: inline-flex; align-items: center; gap: 5px;
       transition: gap var(--tr);
@@ -557,11 +558,11 @@
     }
     .cta-title em { font-style: italic; }
     .cta-sub {
-      font-family: var(--font-sans); font-size: 11px; font-weight: 300; letter-spacing: .24em;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 300; letter-spacing: .24em;
       text-transform: uppercase; color: var(--taupe); margin-bottom: 52px;
     }
     .btn-cta {
-      display: inline-flex; font-size: 12px; font-weight: 500;
+      display: inline-flex; font-size: 16px; font-weight: 500;
       letter-spacing: .14em; text-transform: uppercase;
       background: var(--espresso); color: var(--white);
       padding: 17px 50px; border-radius: 100px; text-decoration: none;
@@ -579,23 +580,23 @@
       gap: 44px; max-width: 1200px; margin: 0 auto 56px;
     }
     .f-logo { font-family: var(--font-serif); font-size: 24px; font-weight: 400; letter-spacing: .1em; color: var(--white); margin-bottom: 14px; }
-    .f-tag { font-family: var(--font-sans); font-size: 13px; font-weight: 300; line-height: 1.8; color: rgba(237,228,218,.55); margin-bottom: 22px; }
+    .f-tag { font-family: var(--font-sans); font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(237,228,218,.55); margin-bottom: 22px; }
     .f-social { display: flex; gap: 14px; }
-    .f-social a { font-family: var(--font-sans); font-size: 10px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: rgba(237,228,218,.45); text-decoration: none; transition: color var(--tr); }
+    .f-social a { font-family: var(--font-sans); font-size: 15px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: rgba(237,228,218,.45); text-decoration: none; transition: color var(--tr); }
     .f-social a:hover { color: var(--clay); }
-    .f-col-title { font-family: var(--font-sans); font-size: 10px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: var(--clay); margin-bottom: 18px; }
+    .f-col-title { font-family: var(--font-sans); font-size: 15px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: var(--clay); margin-bottom: 18px; }
     .f-col ul { list-style: none; }
     .f-col ul li { margin-bottom: 9px; }
-    .f-col ul a { font-family: var(--font-sans); font-size: 13px; font-weight: 300; color: rgba(237,228,218,.6); text-decoration: none; transition: color var(--tr); }
+    .f-col ul a { font-family: var(--font-sans); font-size: 15px; font-weight: 400; color: rgba(237,228,218,.75); text-decoration: none; transition: color var(--tr); }
     .f-col ul a:hover { color: var(--beige); }
-    .f-col p { font-family: var(--font-sans); font-size: 13px; font-weight: 300; color: rgba(237,228,218,.6); line-height: 1.8; margin-bottom: 7px; }
-    .f-seo { font-family: var(--font-sans); font-size: 11px; font-weight: 300; color: rgba(237,228,218,.3); margin-top: 6px; letter-spacing: .04em; }
+    .f-col p { font-family: var(--font-sans); font-size: 15px; font-weight: 400; color: rgba(237,228,218,.75); line-height: 1.8; margin-bottom: 7px; }
+    .f-seo { font-family: var(--font-sans); font-size: 15px; font-weight: 300; color: rgba(237,228,218,.55); margin-top: 6px; letter-spacing: .04em; }
     .footer-bottom {
       max-width: 1200px; margin: 0 auto; padding-top: 24px;
       border-top: 1px solid rgba(237,228,218,.09);
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
     }
-    .footer-bottom p { font-size: 11px; font-weight: 300; color: rgba(237,228,218,.3); }
+    .footer-bottom p { font-size: 15px; font-weight: 300; color: rgba(237,228,218,.55); }
 
     /* ── MEMBRESÍAS ─────────────────────────── */
     .memb-wrap {
@@ -612,20 +613,20 @@
       padding: 32px 24px; display: flex; flex-direction: column;
     }
     .p-card.feat { background: var(--espresso); }
-    .p-label { font-size: 10px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--clay); margin-bottom: 10px; }
+    .p-label { font-size: 15px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--clay); margin-bottom: 10px; }
     .p-card.feat .p-label { color: var(--sand); }
     .p-name { font-family: var(--font-serif); font-size: 26px; font-weight: 400; color: var(--espresso); margin-bottom: 6px; }
     .p-card.feat .p-name { color: var(--white); }
     .p-amount { font-family: var(--font-serif); font-size: 34px; font-weight: 300; color: var(--espresso); margin-bottom: 6px; }
-    .p-amount span { font-size: 13px; color: var(--taupe); }
+    .p-amount span { font-size: 15px; color: var(--taupe); }
     .p-card.feat .p-amount { color: var(--white); }
     .p-card.feat .p-amount span { color: var(--sand); }
     .p-div { height: 1px; background: var(--sand); margin: 18px 0; }
     .p-card.feat .p-div { background: rgba(237,228,218,.18); }
-    .p-detail { font-size: 12px; font-weight: 300; color: var(--taupe); line-height: 1.6; flex: 1; margin-bottom: 24px; }
+    .p-detail { font-size: 16px; font-weight: 400; color: var(--taupe); line-height: 1.6; flex: 1; margin-bottom: 24px; }
     .p-card.feat .p-detail { color: var(--sand); }
     .p-btn {
-      display: block; text-align: center; font-size: 11px; font-weight: 500;
+      display: block; text-align: center; font-size: 15px; font-weight: 500;
       letter-spacing: .13em; text-transform: uppercase;
       padding: 12px; border-radius: 100px; text-decoration: none;
       border: 1px solid var(--sand); color: var(--espresso); transition: all var(--tr);
@@ -633,7 +634,7 @@
     .p-btn:hover { background: var(--espresso); color: var(--white); border-color: var(--espresso); }
     .p-card.feat .p-btn { background: var(--clay); border-color: var(--clay); color: var(--white); }
     .p-card.feat .p-btn:hover { background: var(--white); color: var(--espresso); border-color: var(--white); }
-    .wellhub-note { text-align: center; margin-top: 24px; font-size: 12px; font-weight: 300; color: var(--taupe); }
+    .wellhub-note { text-align: center; margin-top: 24px; font-size: 16px; font-weight: 300; color: var(--taupe); }
     .wellhub-note strong { color: var(--espresso); font-weight: 500; }
 
     /* ── WHATSAPP ────────────────────────────── */
@@ -668,22 +669,22 @@
     .b-hero { width: 100%; height: 300px; object-fit: cover; display: block; }
     .b-back {
       display: inline-flex; align-items: center; gap: 5px;
-      font-size: 12px; color: var(--clay);
+      font-size: 16px; color: var(--clay);
       cursor: pointer; border: none; background: none; padding: 18px 30px;
     }
     .b-back:hover { color: var(--espresso); }
     .b-body { padding: 0 44px 44px; }
-    .b-cat { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--clay); margin-bottom: 10px; }
+    .b-cat { font-size: 15px; letter-spacing: .18em; text-transform: uppercase; color: var(--clay); margin-bottom: 10px; }
     .b-title { font-family: var(--font-serif); font-size: clamp(24px,3.5vw,36px); color: var(--espresso); margin-bottom: 12px; line-height: 1.2; font-weight: 400; }
-    .b-author { display: flex; flex-wrap: wrap; font-size: 12px; color: var(--taupe); margin-bottom: 18px; }
+    .b-author { display: flex; flex-wrap: wrap; font-size: 16px; color: var(--taupe); margin-bottom: 18px; }
     .b-author span { margin-right: 4px; }
     .b-author span:not(:last-child)::after { content: ' ·'; margin-left: 4px; }
     .b-share { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--beige); }
-    .b-share-lbl { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--taupe); margin-right: 3px; }
+    .b-share-lbl { font-size: 15px; letter-spacing: .12em; text-transform: uppercase; color: var(--taupe); margin-right: 3px; }
     .s-btn {
       display: inline-flex; align-items: center; gap: 4px; padding: 5px 13px;
       border-radius: 100px; border: 1px solid var(--sand); background: transparent;
-      font-size: 11px; color: var(--espresso); cursor: pointer;
+      font-size: 15px; color: var(--espresso); cursor: pointer;
       transition: all .2s; text-decoration: none;
     }
     .s-btn:hover { background: var(--beige); }
@@ -731,7 +732,7 @@
     /* ── DISC CTA LINK ─── */
     .disc-cta {
       display: inline-flex; align-items: center; gap: 5px;
-      font-family: var(--font-sans); font-size: 11px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400;
       letter-spacing: .1em; color: var(--clay); margin-top: 14px;
       transition: gap var(--tr);
     }
@@ -754,7 +755,7 @@
     }
     .pm-back {
       display: flex; align-items: center; gap: 8px;
-      font-family: var(--font-sans); font-size: 11px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400;
       letter-spacing: .12em; text-transform: uppercase; color: var(--taupe);
       background: none; border: none; cursor: pointer; transition: color var(--tr);
     }
@@ -765,7 +766,7 @@
       letter-spacing: .12em; color: var(--espresso);
     }
     .pm-nav-cta {
-      font-family: var(--font-sans); font-size: 11px; font-weight: 500;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 500;
       letter-spacing: .13em; text-transform: uppercase;
       background: var(--espresso); color: var(--white);
       padding: 8px 18px; border-radius: 100px; text-decoration: none;
@@ -792,7 +793,7 @@
       max-width: 760px;
     }
     .pm-hero-label {
-      font-family: var(--font-sans); font-size: 10px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400;
       letter-spacing: .26em; text-transform: uppercase;
       color: rgba(255,255,255,.6); margin-bottom: 14px; display: block;
     }
@@ -819,7 +820,7 @@
       border-bottom: 1px solid var(--sand);
     }
     .pm-intro-left .pm-section-label {
-      font-family: var(--font-sans); font-size: 10px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400;
       letter-spacing: .26em; text-transform: uppercase; color: var(--clay);
       margin-bottom: 18px; display: block;
     }
@@ -836,7 +837,7 @@
 
     /* Grilla de clases */
     .pm-clases-title {
-      font-family: var(--font-sans); font-size: 10px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400;
       letter-spacing: .26em; text-transform: uppercase; color: var(--clay);
       margin-bottom: 36px; display: block;
     }
@@ -855,7 +856,7 @@
     }
     .pm-clase:hover { background: var(--beige); }
     .pm-clase-nivel {
-      font-family: var(--font-sans); font-size: 10px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400;
       letter-spacing: .18em; text-transform: uppercase; color: var(--clay);
       margin-bottom: 14px;
     }
@@ -864,12 +865,12 @@
       font-weight: 400; color: var(--espresso); margin-bottom: 14px; line-height: 1.15;
     }
     .pm-clase-desc {
-      font-family: var(--font-sans); font-size: 14px; font-weight: 300;
+      font-family: var(--font-sans); font-size: 16px; font-weight: 300;
       line-height: 1.8; color: var(--taupe); flex: 1;
     }
     .pm-clase-tag {
       display: inline-flex; align-items: center;
-      font-family: var(--font-sans); font-size: 10px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400;
       letter-spacing: .12em; text-transform: uppercase;
       border: 1px solid var(--sand); color: var(--taupe);
       padding: 5px 12px; border-radius: 100px; margin-top: 20px; align-self: flex-start;
@@ -883,9 +884,9 @@
       display: flex; align-items: center; gap: 8px;
       background: var(--beige); border-radius: 100px;
       padding: 10px 20px;
-      font-family: var(--font-sans); font-size: 12px; font-weight: 300; color: var(--espresso);
+      font-family: var(--font-sans); font-size: 16px; font-weight: 300; color: var(--espresso);
     }
-    .pm-chip-icon { font-size: 14px; }
+    .pm-chip-icon { font-size: 16px; }
 
     /* CTA bottom */
     .pm-cta {
@@ -896,7 +897,7 @@
     }
     .pm-cta-text { flex: 1; }
     .pm-cta-label {
-      font-family: var(--font-sans); font-size: 10px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400;
       letter-spacing: .26em; text-transform: uppercase; color: var(--clay);
       margin-bottom: 10px; display: block;
     }
@@ -958,7 +959,7 @@
       font-size: 22px; margin-bottom: 18px; line-height: 1;
     }
     .ori-objetivo {
-      font-family: var(--font-sans); font-size: 10px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400;
       letter-spacing: .2em; text-transform: uppercase;
       color: var(--clay); margin-bottom: 12px;
     }
@@ -968,14 +969,14 @@
       margin-bottom: 16px;
     }
     .ori-desc {
-      font-family: var(--font-sans); font-size: 13px; font-weight: 300;
-      line-height: 1.75; color: var(--taupe); margin-bottom: 22px; flex: 1;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 300;
+      line-height: 1.8; color: var(--taupe); font-weight: 400; margin-bottom: 22px; flex: 1;
     }
     .ori-tags {
       display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto;
     }
     .ori-tag {
-      font-family: var(--font-sans); font-size: 10px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 15px; font-weight: 400;
       letter-spacing: .1em; text-transform: uppercase;
       background: var(--beige); color: var(--espresso);
       padding: 5px 12px; border-radius: 100px;
@@ -1033,7 +1034,7 @@
     details.faq-item[open] .faq-icon { transform: rotate(45deg); }
 
     .faq-answer {
-      font-family: var(--font-sans); font-size: 14px; font-weight: 300;
+      font-family: var(--font-sans); font-size: 16px; font-weight: 300;
       line-height: 1.85; color: var(--taupe);
       padding-bottom: 22px;
     }
@@ -1077,7 +1078,7 @@ function toggleLang() {
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">BODHI</a>
+  <a href="https://bodhiwellnessclub.com/" class="nav-logo">BODHI</a>
   <ul class="nav-links">
     <li><a href="#practicas"><span data-lang="es">Prácticas</span><span data-lang="en" style="display:none">Practices</span></a></li>
     <li><a href="#terapias"><span data-lang="es">Terapias</span><span data-lang="en" style="display:none">Therapies</span></a></li>
@@ -1168,7 +1169,7 @@ function toggleLang() {
     </div>
   </div>
   <div class="disc-grid disc-grid-5">
-    <div class="disc-card fu" onclick="openPractica('p-yoga')" style="cursor:pointer;">
+    <a class="disc-card fu" href="#practicas" onclick="openPractica('p-yoga'); return false;">
       <img src="yoga.webp" alt="Clase de Yoga en Bodhi Wellness Club San Telmo" loading="lazy" class="disc-card-img" />
       <div class="disc-card-body">
         <p class="disc-tag"><span data-lang="es">Práctica</span><span data-lang="en" style="display:none">Practice</span></p>
@@ -1176,8 +1177,8 @@ function toggleLang() {
         <p class="disc-text"><span data-lang="es">Prácticas dinámicas, somáticas y restaurativas que combinan movimiento y respiración.</span><span data-lang="en" style="display:none">Dynamic, somatic and restorative practices combining movement and breath.</span></p>
         <span class="disc-cta"><span data-lang="es">Ver clases</span><span data-lang="en" style="display:none">See classes</span> →</span>
       </div>
-    </div>
-    <div class="disc-card fu" onclick="openPractica('p-barre')" style="cursor:pointer;">
+    </a>
+    <a class="disc-card fu" href="#practicas" onclick="openPractica('p-barre'); return false;">
       <img src="barre.webp" alt="Clase de Barre en Bodhi Wellness Club Buenos Aires" loading="lazy" class="disc-card-img" />
       <div class="disc-card-body">
         <p class="disc-tag"><span data-lang="es">Práctica</span><span data-lang="en" style="display:none">Practice</span></p>
@@ -1185,8 +1186,8 @@ function toggleLang() {
         <p class="disc-text"><span data-lang="es">Una práctica intensa y elegante inspirada en la técnica del ballet.</span><span data-lang="en" style="display:none">An intense and elegant practice inspired by ballet technique.</span></p>
         <span class="disc-cta"><span data-lang="es">Ver clases</span><span data-lang="en" style="display:none">See classes</span> →</span>
       </div>
-    </div>
-    <div class="disc-card fu" onclick="openPractica('p-pilates')" style="cursor:pointer;">
+    </a>
+    <a class="disc-card fu" href="#practicas" onclick="openPractica('p-pilates'); return false;">
       <img src="pilates.webp" alt="Clase de Mat Pilates en Bodhi Wellness Club" loading="lazy" class="disc-card-img" />
       <div class="disc-card-body">
         <p class="disc-tag"><span data-lang="es">Práctica</span><span data-lang="en" style="display:none">Practice</span></p>
@@ -1194,8 +1195,8 @@ function toggleLang() {
         <p class="disc-text"><span data-lang="es">Fuerza profunda, control y estabilidad para el centro del cuerpo.</span><span data-lang="en" style="display:none">Deep strength, control and stability for the body's core.</span></p>
         <span class="disc-cta"><span data-lang="es">Ver clases</span><span data-lang="en" style="display:none">See classes</span> →</span>
       </div>
-    </div>
-    <div class="disc-card fu" onclick="openPractica('p-hot')" style="cursor:pointer;">
+    </a>
+    <a class="disc-card fu" href="#hotroom" onclick="openPractica('p-hot'); return false;">
       <img src="hotroom.webp" alt="Hot Room con calor infrarrojo en Bodhi Wellness Club" loading="lazy" class="disc-card-img" />
       <div class="disc-card-body">
         <p class="disc-tag" style="color:var(--hot-light);">Hot Room</p>
@@ -1203,8 +1204,8 @@ function toggleLang() {
         <p class="disc-text"><span data-lang="es">Práctica en sala climatizada con calor infrarrojo que permite profundizar el movimiento.</span><span data-lang="en" style="display:none">Practice in a heated room with infrared heat that allows deeper movement.</span></p>
         <span class="disc-cta" style="color:var(--hot-light);"><span data-lang="es">Ver clases</span><span data-lang="en" style="display:none">See classes</span> →</span>
       </div>
-    </div>
-    <div class="disc-card fu" onclick="document.getElementById('terapias').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
+    </a>
+    <a class="disc-card fu" href="#terapias">
       <img src="masajes.webp" alt="Terapias corporales y masajes en Bodhi Wellness Club" loading="lazy" class="disc-card-img" />
       <div class="disc-card-body">
         <p class="disc-tag"><span data-lang="es">Terapias</span><span data-lang="en" style="display:none">Therapies</span></p>
@@ -1212,7 +1213,7 @@ function toggleLang() {
         <p class="disc-text"><span data-lang="es">Masajes y tratamientos corporales para liberar tensiones y recuperar el equilibrio.</span><span data-lang="en" style="display:none">Massage and body treatments to release tension and restore balance.</span></p>
         <span class="disc-cta"><span data-lang="es">Explorar</span><span data-lang="en" style="display:none">Explore</span> →</span>
       </div>
-    </div>
+    </a>
   </div>
   <div class="disc-footer fu">
     <a href="#practicas" class="btn-dark">
@@ -1372,7 +1373,7 @@ function toggleLang() {
         <span class="hot-pill">Hot Pilates</span>
         <span class="hot-pill">35–40 °C</span>
       </div>
-      <a href="javascript:void(0)" onclick="openPractica('p-hot')" class="btn-hot">
+      <a href="#hotroom" onclick="openPractica('p-hot')" class="btn-hot">
         <span data-lang="es">Ver clases en la Hot Room</span><span data-lang="en" style="display:none">See Hot Room classes</span>
       </a>
     </div>
@@ -1721,7 +1722,7 @@ function toggleLang() {
       <div class="f-logo">BODHI</div>
       <p class="f-tag"><span data-lang="es">Bodhi Wellness Club es un estudio de bienestar dedicado a prácticas de movimiento consciente como Yoga, Barre y Pilates, junto a terapias corporales.</span><span data-lang="en" style="display:none">Bodhi Wellness Club is a wellness studio dedicated to conscious movement practices like Yoga, Barre and Pilates, alongside body therapies.</span></p>
       <div class="f-social">
-        <a href="#" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/bodhiwellnessclub" target="_blank" rel="noopener">Instagram</a>
         <a href="https://wa.me/5491130229096" target="_blank">WhatsApp</a>
       </div>
     </div>
