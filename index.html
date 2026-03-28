@@ -143,10 +143,17 @@
     }
     .nav-logo {
       display: flex; align-items: center; text-decoration: none; flex-shrink: 0;
+      position: relative; width: 112px; height: 40px;
     }
     .nav-logo img {
-      height: 40px; width: auto; display: block;
+      position: absolute; top: 0; left: 0;
+      height: 40px; width: 112px; display: block;
+      transition: opacity .4s;
     }
+    .nav-logo .logo-w { opacity: 1; }
+    .nav-logo .logo-d { opacity: 0; }
+    nav.scrolled .nav-logo .logo-w { opacity: 0; }
+    nav.scrolled .nav-logo .logo-d { opacity: 1; }
     .nav-links { display: flex; align-items: center; gap: clamp(16px,2vw,30px); list-style: none; }
     .nav-links a {
       font-family: var(--font-sans); font-size: 15px; font-weight: 400;
@@ -1091,7 +1098,8 @@ function toggleLang() {
 <!-- NAV -->
 <nav id="navbar">
   <a href="https://bodhiwellnessclub.com/" class="nav-logo">
-    <img src="logo-white.png" alt="Bodhi Wellness Club" width="112" height="40" />
+    <img src="logo-white.png" alt="Bodhi Wellness Club" class="logo-w" width="112" height="40" />
+    <img src="logo-dark.png" alt="" class="logo-d" width="112" height="40" aria-hidden="true" />
   <ul class="nav-links">
     <li><a href="#experiencias"><span data-lang="es">Experiencias</span><span data-lang="en" style="display:none">Experiences</span></a></li>
     <li><a href="#terapias"><span data-lang="es">Terapias</span><span data-lang="en" style="display:none">Therapies</span></a></li>
@@ -2266,13 +2274,8 @@ function toggleLang() {
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   var nb = document.getElementById('navbar');
-  var navLogoImg = nb.querySelector('.nav-logo img');
   window.addEventListener('scroll', function() {
-    var isScrolled = window.scrollY > 50;
-    nb.classList.toggle('scrolled', isScrolled);
-    if (navLogoImg) {
-      navLogoImg.src = isScrolled ? 'logo-dark.png' : 'logo-white.png';
-    }
+    nb.classList.toggle('scrolled', window.scrollY > 50);
   });
 
   // Mobile menu
