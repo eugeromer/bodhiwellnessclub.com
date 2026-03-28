@@ -124,6 +124,7 @@
       --radius:     10px;
       --tr:         0.3s ease;
     }
+
     @font-face {
       font-family: 'Cormorant Garamond fallback';
       src: local('Georgia');
@@ -165,11 +166,11 @@
     }
     .nav-logo {
       display: flex; align-items: center; text-decoration: none; flex-shrink: 0;
-      position: relative; width: 112px; height: 40px;
+      position: relative; width: 109px; height: 40px;
     }
     .nav-logo img {
       position: absolute; top: 0; left: 0;
-      height: 40px; width: 112px; display: block;
+      height: 40px; width: 109px; display: block; object-fit: contain; object-position: left;
       transition: opacity .4s;
     }
     .nav-logo .logo-w { opacity: 1; }
@@ -178,7 +179,7 @@
     nav.scrolled .nav-logo .logo-d { opacity: 1; }
     .nav-links { display: flex; align-items: center; gap: clamp(16px,2vw,30px); list-style: none; }
     .nav-links a {
-      font-family: var(--font-sans); font-size: 15px; font-weight: 400;
+      font-family: var(--font-sans); font-size: 11px; font-weight: 400;
       letter-spacing: .14em; text-transform: uppercase;
       color: rgba(255,255,255,.85); text-decoration: none; transition: color var(--tr);
     }
@@ -189,15 +190,15 @@
     nav.scrolled .lang-btn { color: var(--espresso) !important; border-color: rgba(58,47,43,.28) !important; }
     .nav-right { display: flex; align-items: center; gap: 12px; }
     .nav-cta {
-      font-family: var(--font-sans); font-size: 15px; font-weight: 500;
-      letter-spacing: .13em; text-transform: uppercase;
+      font-family: var(--font-sans); font-size: 11px; font-weight: 500;
+      letter-spacing: .16em; text-transform: uppercase;
       background: var(--espresso); color: var(--white) !important;
       padding: 9px 20px; border-radius: 100px; text-decoration: none;
       transition: background var(--tr);
     }
     .nav-cta:hover { background: var(--clay) !important; }
     .lang-btn {
-      font-family: var(--font-sans); font-size: 15px; font-weight: 500;
+      font-family: var(--font-sans); font-size: 11px; font-weight: 500;
       letter-spacing: .12em; background: transparent;
       border: 1px solid rgba(58,47,43,.28); color: var(--espresso);
       padding: 7px 13px; border-radius: 100px; cursor: pointer;
@@ -205,7 +206,8 @@
     }
     .lang-btn:hover { border-color: var(--espresso); }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--espresso); transition: all .3s; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: rgba(255,255,255,.85); transition: all .3s; }
+    nav.scrolled .hamburger span { background: var(--espresso); }
 
     /* Mobile menu */
     .mob-menu {
@@ -1120,8 +1122,8 @@ function toggleLang() {
 <!-- NAV -->
 <nav id="navbar">
   <a href="https://bodhiwellnessclub.com/" class="nav-logo">
-    <img src="logo-white.png" alt="Bodhi Wellness Club" class="logo-w" width="112" height="40" />
-    <img src="logo-dark.png" alt="" class="logo-d" width="112" height="40" aria-hidden="true" />
+    <img src="logo-white.png" alt="Bodhi Wellness Club" class="logo-w" width="109" height="40" />
+    <img src="logo-dark.png" alt="" class="logo-d" width="109" height="40" aria-hidden="true" />
   </a>
   <ul class="nav-links">
     <li><a href="#experiencias"><span data-lang="es">Experiencias</span><span data-lang="en" style="display:none">Experiences</span></a></li>
