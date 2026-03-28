@@ -88,7 +88,8 @@
   </script>
 
   <!-- Preload hero image (mejora LCP) -->
-  <link rel="preload" as="image" href="hero.webp" />
+  <link rel="preload" as="image" href="hero.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="logo-white.png" />
 
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -145,10 +146,6 @@
     }
     .nav-logo img {
       height: 40px; width: auto; display: block;
-      content: url('logo-white.png');
-    }
-    nav.scrolled .nav-logo img {
-      content: url('logo-dark.png');
     }
     .nav-links { display: flex; align-items: center; gap: clamp(16px,2vw,30px); list-style: none; }
     .nav-links a {
@@ -790,7 +787,7 @@
 
     /* Hero de cada práctica */
     .pm-hero {
-      position: relative; height: clamp(340px, 50vh, 560px); overflow: hidden;
+      position: relative; height: clamp(420px, 60vh, 640px); overflow: hidden;
       display: flex; align-items: flex-end;
     }
     .pm-hero-img {
@@ -799,12 +796,13 @@
     }
     .pm-hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(30,20,17,.65) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(30,20,17,.72) 100%);
     }
     .pm-hero-content {
       position: relative; z-index: 2;
       padding: clamp(32px,5vw,60px) clamp(24px,5vw,80px);
-      max-width: 760px;
+      padding-top: 80px;
+      max-width: 760px; width: 100%;
     }
     .pm-hero-label {
       font-family: var(--font-sans); font-size: 15px; font-weight: 400;
@@ -1093,7 +1091,7 @@ function toggleLang() {
 <!-- NAV -->
 <nav id="navbar">
   <a href="https://bodhiwellnessclub.com/" class="nav-logo">
-    <img src="logo-dark.png" alt="Bodhi Wellness Club" />
+    <img src="logo-white.png" alt="Bodhi Wellness Club" width="112" height="40" />
   <ul class="nav-links">
     <li><a href="#experiencias"><span data-lang="es">Experiencias</span><span data-lang="en" style="display:none">Experiences</span></a></li>
     <li><a href="#terapias"><span data-lang="es">Terapias</span><span data-lang="en" style="display:none">Therapies</span></a></li>
@@ -1121,7 +1119,7 @@ function toggleLang() {
 
 <!-- 1. HERO -->
 <section class="hero">
-  <img src="hero.webp" alt="Bodhi Wellness Club — San Telmo Buenos Aires" class="hero-img" />
+  <img src="hero.webp" alt="Bodhi Wellness Club — San Telmo Buenos Aires" class="hero-img" fetchpriority="high" />
   <div class="hero-overlay"></div>
   <div class="hero-content fu">
     <p class="hero-brand">Bodhi Wellness Club.</p>
@@ -1334,7 +1332,7 @@ function toggleLang() {
         <span data-lang="es">Si todavía no estás seguro de qué práctica es la mejor para vos, podemos ayudarte.</span>
         <span data-lang="en" style="display:none">If you're still not sure which practice is best for you, we can help.</span>
       </p>
-      <a href="mailto:hola@bodhiwellnessclub.com?subject=Consulta%20orientaci%C3%B3n%20Bodhi&body=Hola%2C%20me%20gustar%C3%ADa%20coordinar%20una%20breve%20llamada%20para%20recibir%20orientaci%C3%B3n%20sobre%20qu%C3%A9%20pr%C3%A1ctica%20ser%C3%ADa%20la%20m%C3%A1s%20adecuada%20para%20m%C3%AD." class="btn-dark">
+      <a href="/cdn-cgi/l/email-protection#aec6c1c2cfeeccc1cac6c7d9cbc2c2c0cbddddcdc2dbcc80cdc1c391dddbccc4cbcdda93edc1c0dddbc2dacf8b9c9ec1dcc7cbc0dacfcdc78bed9d8bec9dc08b9c9eecc1cac6c788ccc1cad793e6c1c2cf8b9ced8b9c9ec3cb8b9c9ec9dbdddacfdc8bed9d8befeacf8b9c9ecdc1c1dccac7c0cfdc8b9c9edbc0cf8b9c9eccdccbd8cb8b9c9ec2c2cfc3cfcacf8b9c9edecfdccf8b9c9edccbcdc7ccc7dc8b9c9ec1dcc7cbc0dacfcdc78bed9d8bec9dc08b9c9eddc1ccdccb8b9c9edfdb8bed9d8bef978b9c9ededc8bed9d8bef9fcddac7cdcf8b9c9eddcbdc8bed9d8befeacf8b9c9ec2cf8b9c9ec38bed9d8bef9fdd8b9c9ecfcacbcddbcfcacf8b9c9edecfdccf8b9c9ec38bed9d8befea80" class="btn-dark">
         <span data-lang="es">Coordinar una llamada</span>
         <span data-lang="en" style="display:none">Schedule a call</span>
       </a>
@@ -1633,7 +1631,7 @@ function toggleLang() {
         <span data-lang="es">¿Tenés otra pregunta? Si querés saber más sobre las prácticas o recibir orientación para empezar, podemos ayudarte.</span>
         <span data-lang="en" style="display:none">Have another question? If you'd like to know more about our practices or get guidance on where to start, we can help.</span>
       </p>
-      <a href="mailto:hola@bodhiwellnessclub.com?subject=Consulta%20orientaci%C3%B3n%20Bodhi&body=Hola%2C%20me%20gustar%C3%ADa%20coordinar%20una%20breve%20llamada%20para%20recibir%20orientaci%C3%B3n%20sobre%20qu%C3%A9%20pr%C3%A1ctica%20ser%C3%ADa%20la%20m%C3%A1s%20adecuada%20para%20m%C3%AD." class="btn-dark">
+      <a href="/cdn-cgi/l/email-protection#c7afa8aba687a5a8a3afaeb0a2ababa9a2b4b4a4abb2a5e9a4a8aaf8b4b2a5ada2a4b3fa84a8a9b4b2abb3a6e2f5f7a8b5aea2a9b3a6a4aee284f4e285f4a9e2f5f785a8a3afaee1a5a8a3befa8fa8aba6e2f584e2f5f7aaa2e2f5f7a0b2b4b3a6b5e284f4e28683a6e2f5f7a4a8a8b5a3aea9a6b5e2f5f7b2a9a6e2f5f7a5b5a2b1a2e2f5f7ababa6aaa6a3a6e2f5f7b7a6b5a6e2f5f7b5a2a4aea5aeb5e2f5f7a8b5aea2a9b3a6a4aee284f4e285f4a9e2f5f7b4a8a5b5a2e2f5f7b6b2e284f4e286fee2f5f7b7b5e284f4e286f6a4b3aea4a6e2f5f7b4a2b5e284f4e28683a6e2f5f7aba6e2f5f7aae284f4e286f6b4e2f5f7a6a3a2a4b2a6a3a6e2f5f7b7a6b5a6e2f5f7aae284f4e28683e9" class="btn-dark">
         <span data-lang="es">Coordinar una llamada</span>
         <span data-lang="en" style="display:none">Schedule a call</span>
       </a>
@@ -1700,7 +1698,7 @@ function toggleLang() {
         <span data-lang="es">Retiros, encuentros y experiencias en distintas locaciones. Bienestar más allá del estudio.</span>
         <span data-lang="en" style="display:none">Retreats, gatherings and experiences in different locations. Wellness beyond the studio.</span>
       </p>
-      <a href="mailto:hola@bodhiwellnessclub.com?subject=Consulta Experiencias Bodhi" style="font-family:var(--font-sans); font-size:11px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--espresso); text-decoration:none; border-bottom:1px solid var(--espresso); padding-bottom:2px;">
+      <a href="/cdn-cgi/l/email-protection#86eee9eae7c6e4e9e2eeeff1e3eaeae8e3f5f5e5eaf3e4a8e5e9ebb9f5f3e4ece3e5f2bbc5e9e8f5f3eaf2e7a6c3fef6e3f4efe3e8e5efe7f5a6c4e9e2eeef" style="font-family:var(--font-sans); font-size:11px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--espresso); text-decoration:none; border-bottom:1px solid var(--espresso); padding-bottom:2px;">
         <span data-lang="es">Consultar →</span><span data-lang="en" style="display:none">Enquire →</span>
       </a>
     </div>
@@ -1831,7 +1829,7 @@ function toggleLang() {
       <p class="f-col-title"><span data-lang="es">Contacto</span><span data-lang="en" style="display:none">Contact</span></p>
       <p>Av. Caseros 594<br>San Telmo, Buenos Aires</p>
       <p>+54 9 11 3022-9096</p>
-      <p>hola@bodhiwellnessclub.com</p>
+      <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b8d0d7d4d9f8dad7dcd0d1cfddd4d4d6ddcbcbdbd4cdda96dbd7d5">[email&#160;protected]</a></p>
       <p class="f-seo" style="margin-top:16px;">Bodhi Wellness Club<br>Yoga · Barre · Pilates · Hot Yoga infrarrojo<br>Buenos Aires</p>
     </div>
   </div>
@@ -2266,10 +2264,15 @@ function toggleLang() {
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   var nb = document.getElementById('navbar');
+  var navLogoImg = nb.querySelector('.nav-logo img');
   window.addEventListener('scroll', function() {
-    nb.classList.toggle('scrolled', window.scrollY > 50);
+    var isScrolled = window.scrollY > 50;
+    nb.classList.toggle('scrolled', isScrolled);
+    if (navLogoImg) {
+      navLogoImg.src = isScrolled ? 'logo-dark.png' : 'logo-white.png';
+    }
   });
 
   // Mobile menu
@@ -2306,36 +2309,4 @@ function toggleLang() {
   function copyLink(url, btn) {
     navigator.clipboard.writeText(url).then(function() {
       var o = btn.innerHTML; btn.innerHTML = '✓ Copiado!'; btn.classList.add('copied');
-      setTimeout(function() { btn.innerHTML = o; btn.classList.remove('copied'); }, 2000);
-    });
-  }
-
-  // Fade up — only animate elements that start below the viewport
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) {
-        e.target.style.transition = 'opacity .8s ease, transform .8s ease';
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.08 });
-
-  document.querySelectorAll('.fu').forEach(function(el) {
-    var rect = el.getBoundingClientRect();
-    if (rect.top > window.innerHeight) {
-      // Below fold: hide and observe
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(22px)';
-      obs.observe(el);
-    } else {
-      // Already visible: show immediately
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-    }
-  });
-</script>
-
-</body>
-</html>
+      setTimeout(function() { btn.innerHTML = o; btn.classList.remove('copied');
