@@ -452,8 +452,73 @@
     .ter-item {
       background: var(--warm-white); padding: 28px 24px;
       transition: background var(--tr);
+      cursor: pointer; position: relative;
     }
     .ter-item:hover { background: var(--beige); }
+    .ter-item::after {
+      content: '+';
+      position: absolute; top: 18px; right: 18px;
+      font-size: 20px; font-weight: 300; color: var(--clay);
+      opacity: 0; transition: opacity var(--tr), transform var(--tr);
+      transform: scale(.7);
+    }
+    .ter-item:hover::after { opacity: 1; transform: scale(1); }
+
+    /* ── MODAL TERAPIAS ─────────────────────── */
+    .ter-modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 2000;
+      background: rgba(58,47,43,.5); backdrop-filter: blur(4px);
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .ter-modal-overlay.active { display: flex; }
+    .ter-modal-card {
+      background: var(--warm-white); border-radius: var(--radius);
+      padding: 36px 32px; max-width: 460px; width: 100%;
+      position: relative; box-shadow: 0 20px 60px rgba(58,47,43,.18);
+      animation: terModalIn .25s ease;
+    }
+    @keyframes terModalIn {
+      from { opacity:0; transform: translateY(10px) scale(.98); }
+      to   { opacity:1; transform: translateY(0) scale(1); }
+    }
+    .ter-modal-close {
+      position: absolute; top: 14px; right: 14px;
+      background: none; border: none; cursor: pointer;
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--taupe); font-size: 16px; transition: background var(--tr);
+    }
+    .ter-modal-close:hover { background: var(--beige); }
+    .ter-modal-num {
+      font-family: var(--font-sans); font-size: 11px; font-weight: 500;
+      letter-spacing: .18em; color: var(--clay); margin-bottom: 10px;
+    }
+    .ter-modal-name {
+      font-family: var(--font-serif); font-size: 28px; font-weight: 400;
+      font-style: italic; color: var(--espresso); margin-bottom: 14px; line-height: 1.2;
+    }
+    .ter-modal-desc {
+      font-family: var(--font-sans); font-size: 13px; line-height: 1.8;
+      color: var(--taupe); margin-bottom: 22px;
+    }
+    .ter-modal-meta {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+    }
+    .ter-modal-duration {
+      font-family: var(--font-sans); font-size: 12px; font-weight: 500;
+      color: var(--taupe); background: var(--beige);
+      padding: 5px 13px; border-radius: 20px; letter-spacing: .04em;
+    }
+    .ter-modal-price {
+      font-family: var(--font-sans); font-size: 18px; font-weight: 500; color: var(--clay);
+    }
+    .ter-modal-cta {
+      display: block; text-align: center; text-decoration: none;
+      background: var(--clay); color: var(--white);
+      font-family: var(--font-sans); font-size: 13px; font-weight: 500; letter-spacing: .06em;
+      padding: 14px 24px; border-radius: 8px; transition: background var(--tr);
+    }
+    .ter-modal-cta:hover { background: var(--espresso); }
     .ter-num { font-family: var(--font-sans); font-size: 11px; font-weight: 500; letter-spacing: .18em; color: var(--clay); margin-bottom: 12px; }
     .ter-name { font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--espresso); margin-bottom: 8px; letter-spacing: .01em; }
     .ter-desc { font-family: var(--font-sans); font-size: 13px; font-weight: 400; line-height: 1.75; color: var(--taupe); }
@@ -1428,18 +1493,35 @@ function toggleLang() {
       </div>
     </div>
     <div class="terapias-grid fu">
-      <div class="ter-item"><p class="ter-num">01</p><h3 class="ter-name"><span data-lang="es">Masaje descontracturante</span><span data-lang="en" style="display:none">Deep tissue massage</span></h3><p class="ter-desc"><span data-lang="es">Libera tensiones musculares profundas y alivia el dolor crónico.</span><span data-lang="en" style="display:none">Releases deep muscular tension and relieves chronic pain.</span></p><p class="ter-price">$45.000</p></div>
-      <div class="ter-item"><p class="ter-num">02</p><h3 class="ter-name"><span data-lang="es">Drenaje linfático</span><span data-lang="en" style="display:none">Lymphatic drainage</span></h3><p class="ter-desc"><span data-lang="es">Activa la circulación y reduce la retención de líquidos.</span><span data-lang="en" style="display:none">Activates circulation and reduces fluid retention.</span></p><p class="ter-price">$40.000</p></div>
-      <div class="ter-item"><p class="ter-num">03</p><h3 class="ter-name">Maderoterapia</h3><p class="ter-desc"><span data-lang="es">Técnica con elementos de madera para modelar y tonificar el cuerpo.</span><span data-lang="en" style="display:none">Wood therapy technique to shape and tone the body.</span></p><p class="ter-price">$45.000</p></div>
-      <div class="ter-item"><p class="ter-num">04</p><h3 class="ter-name"><span data-lang="es">Reflexología</span><span data-lang="en" style="display:none">Reflexology</span></h3><p class="ter-desc"><span data-lang="es">Estimulación de puntos reflejos en pies y manos para el equilibrio del organismo.</span><span data-lang="en" style="display:none">Stimulation of reflex points in feet and hands for body balance.</span></p><p class="ter-price">$40.000</p></div>
-      <div class="ter-item"><p class="ter-num">05</p><h3 class="ter-name"><span data-lang="es">Limpieza facial</span><span data-lang="en" style="display:none">Facial cleansing</span></h3><p class="ter-desc"><span data-lang="es">Tratamiento profundo para limpiar y renovar la piel del rostro.</span><span data-lang="en" style="display:none">Deep treatment to cleanse and renew facial skin.</span></p><p class="ter-price">$45.000</p></div>
-      <div class="ter-item"><p class="ter-num">06</p><h3 class="ter-name"><span data-lang="es">Masaje facial</span><span data-lang="en" style="display:none">Facial massage</span></h3><p class="ter-desc"><span data-lang="es">Relajación profunda del rostro, cuello y escote.</span><span data-lang="en" style="display:none">Deep relaxation of face, neck and décolleté.</span></p><p class="ter-price">$35.000</p></div>
-      <div class="ter-item"><p class="ter-num">07</p><h3 class="ter-name"><span data-lang="es">Exfoliación corporal</span><span data-lang="en" style="display:none">Body exfoliation</span></h3><p class="ter-desc"><span data-lang="es">Renovación de la piel mediante técnicas de exfoliación profunda e hidratación.</span><span data-lang="en" style="display:none">Skin renewal through deep exfoliation and hydration techniques.</span></p><p class="ter-price">$50.000</p></div>
-      <div class="ter-item"><p class="ter-num">08</p><h3 class="ter-name">Dry Body Brush</h3><p class="ter-desc"><span data-lang="es">Técnica de cepillado en seco que estimula la circulación, activa el sistema linfático y renueva la piel.</span><span data-lang="en" style="display:none">Dry brushing technique that stimulates circulation, activates the lymphatic system and renews the skin.</span></p><p class="ter-price">$40.000</p></div>
-      <div class="ter-item"><p class="ter-num">09</p><h3 class="ter-name"><span data-lang="es">Masaje de cuero cabelludo</span><span data-lang="en" style="display:none">Scalp massage</span></h3><p class="ter-desc"><span data-lang="es">Masaje relajante que estimula la circulación del cuero cabelludo, alivia tensiones y favorece el bienestar general.</span><span data-lang="en" style="display:none">Relaxing massage that stimulates scalp circulation, relieves tension and promotes overall wellbeing.</span></p><p class="ter-price">$40.000</p></div>
+      <div class="ter-item" onclick="openTerapia(this)" data-duration="60 min" data-info-es="Trabajo profundo sobre la musculatura para disolver contracturas y liberar nudos de tensión. Ideal para dolor de espalda, cervicales o tensión acumulada por el estrés. La presión se adapta a tu necesidad, de moderada a profunda." data-info-en="Deep work on the musculature to dissolve contractures and release tension knots. Ideal for back pain, neck tension or stress. Pressure is adapted to your needs, from moderate to deep."><p class="ter-num">01</p><h3 class="ter-name"><span data-lang="es">Masaje descontracturante</span><span data-lang="en" style="display:none">Deep tissue massage</span></h3><p class="ter-desc"><span data-lang="es">Libera tensiones musculares profundas y alivia el dolor crónico.</span><span data-lang="en" style="display:none">Releases deep muscular tension and relieves chronic pain.</span></p><p class="ter-price">$45.000</p></div>
+      <div class="ter-item" onclick="openTerapia(this)" data-duration="60 min" data-info-es="Técnica suave y rítmica que estimula el sistema linfático para eliminar toxinas y reducir la retención de líquidos. Ayuda a desinflamar, mejorar la circulación y generar una sensación de ligereza general." data-info-en="Gentle rhythmic technique that stimulates the lymphatic system to eliminate toxins and reduce fluid retention. Helps reduce inflammation, improve circulation and create a general sense of lightness."><p class="ter-num">02</p><h3 class="ter-name"><span data-lang="es">Drenaje linfático</span><span data-lang="en" style="display:none">Lymphatic drainage</span></h3><p class="ter-desc"><span data-lang="es">Activa la circulación y reduce la retención de líquidos.</span><span data-lang="en" style="display:none">Activates circulation and reduces fluid retention.</span></p><p class="ter-price">$40.000</p></div>
+      <div class="ter-item" onclick="openTerapia(this)" data-duration="60 min" data-info-es="Técnica corporal con elementos de madera que trabaja sobre la piel y la grasa subcutánea para modelar, tonificar y reducir la celulitis. Activa la circulación y mejora la textura de la piel con resultados visibles desde la primera sesión." data-info-en="Body technique using wooden tools that works on skin and subcutaneous fat to shape, tone and reduce cellulite. Activates circulation and improves skin texture with results visible from the first session."><p class="ter-num">03</p><h3 class="ter-name">Maderoterapia</h3><p class="ter-desc"><span data-lang="es">Técnica con elementos de madera para modelar y tonificar el cuerpo.</span><span data-lang="en" style="display:none">Wood therapy technique to shape and tone the body.</span></p><p class="ter-price">$45.000</p></div>
+      <div class="ter-item" onclick="openTerapia(this)" data-duration="50 min" data-info-es="Estimulación de puntos reflejos en pies y manos que se corresponden con órganos y sistemas del cuerpo. Genera un estado de relajación profunda, mejora la circulación y ayuda a restablecer el equilibrio interno del organismo." data-info-en="Stimulation of reflex points on feet and hands corresponding to organs and body systems. Creates a state of deep relaxation, improves circulation and helps restore the body's internal balance."><p class="ter-num">04</p><h3 class="ter-name"><span data-lang="es">Reflexología</span><span data-lang="en" style="display:none">Reflexology</span></h3><p class="ter-desc"><span data-lang="es">Estimulación de puntos reflejos en pies y manos para el equilibrio del organismo.</span><span data-lang="en" style="display:none">Stimulation of reflex points in feet and hands for body balance.</span></p><p class="ter-price">$40.000</p></div>
+      <div class="ter-item" onclick="openTerapia(this)" data-duration="60 min" data-info-es="Tratamiento facial completo que incluye limpieza profunda, exfoliación, extracción y calma. Elimina impurezas, descongestiona los poros y deja la piel renovada y luminosa. Indicado para todo tipo de piel." data-info-en="Complete facial treatment including deep cleansing, exfoliation, extraction and soothing. Removes impurities, unclogs pores and leaves skin renewed and luminous. Suitable for all skin types."><p class="ter-num">05</p><h3 class="ter-name"><span data-lang="es">Limpieza facial</span><span data-lang="en" style="display:none">Facial cleansing</span></h3><p class="ter-desc"><span data-lang="es">Tratamiento profundo para limpiar y renovar la piel del rostro.</span><span data-lang="en" style="display:none">Deep treatment to cleanse and renew facial skin.</span></p><p class="ter-price">$45.000</p></div>
+      <div class="ter-item" onclick="openTerapia(this)" data-duration="45 min" data-info-es="Masaje suave y fluido del rostro, cuello y escote que trabaja la musculatura facial, activa la circulación y genera un estado de relajación profunda. Mejora el tono y la luminosidad de la piel sin necesidad de productos invasivos." data-info-en="Gentle flowing massage of face, neck and décolleté that works the facial muscles, activates circulation and creates deep relaxation. Improves skin tone and luminosity without invasive products."><p class="ter-num">06</p><h3 class="ter-name"><span data-lang="es">Masaje facial</span><span data-lang="en" style="display:none">Facial massage</span></h3><p class="ter-desc"><span data-lang="es">Relajación profunda del rostro, cuello y escote.</span><span data-lang="en" style="display:none">Deep relaxation of face, neck and décolleté.</span></p><p class="ter-price">$35.000</p></div>
+      <div class="ter-item" onclick="openTerapia(this)" data-duration="60 min" data-info-es="Tratamiento corporal que combina exfoliación profunda e hidratación intensiva para renovar la piel. Elimina células muertas, suaviza la textura y deja la piel nutrida y luminosa de pies a cabeza." data-info-en="Body treatment combining deep exfoliation and intensive hydration to renew the skin. Removes dead cells, smooths texture and leaves skin nourished and luminous from head to toe."><p class="ter-num">07</p><h3 class="ter-name"><span data-lang="es">Exfoliación corporal</span><span data-lang="en" style="display:none">Body exfoliation</span></h3><p class="ter-desc"><span data-lang="es">Renovación de la piel mediante técnicas de exfoliación profunda e hidratación.</span><span data-lang="en" style="display:none">Skin renewal through deep exfoliation and hydration techniques.</span></p><p class="ter-price">$50.000</p></div>
+      <div class="ter-item" onclick="openTerapia(this)" data-duration="45 min" data-info-es="Técnica de cepillado corporal en seco que estimula la circulación, activa el sistema linfático y renueva la superficie de la piel. Se realiza antes de ducharse y tiene un efecto energizante y detox inmediato." data-info-en="Dry body brushing technique that stimulates circulation, activates the lymphatic system and renews the skin surface. Performed before showering with an immediate energising and detox effect."><p class="ter-num">08</p><h3 class="ter-name">Dry Body Brush</h3><p class="ter-desc"><span data-lang="es">Técnica de cepillado en seco que estimula la circulación, activa el sistema linfático y renueva la piel.</span><span data-lang="en" style="display:none">Dry brushing technique that stimulates circulation, activates the lymphatic system and renews the skin.</span></p><p class="ter-price">$40.000</p></div>
+      <div class="ter-item" onclick="openTerapia(this)" data-duration="40 min" data-info-es="Masaje suave y profundo del cuero cabelludo que estimula la circulación local, alivia la tensión craneal y cervical, y genera un estado de relajación total. Indicado para el estrés, el insomnio y la tensión acumulada." data-info-en="Gentle deep scalp massage that stimulates local circulation, relieves cranial and neck tension, and creates a state of total relaxation. Recommended for stress, insomnia and accumulated tension."><p class="ter-num">09</p><h3 class="ter-name"><span data-lang="es">Masaje de cuero cabelludo</span><span data-lang="en" style="display:none">Scalp massage</span></h3><p class="ter-desc"><span data-lang="es">Masaje relajante que estimula la circulación del cuero cabelludo, alivia tensiones y favorece el bienestar general.</span><span data-lang="en" style="display:none">Relaxing massage that stimulates scalp circulation, relieves tension and promotes overall wellbeing.</span></p><p class="ter-price">$40.000</p></div>
     </div>
   </div>
 </section>
+
+<!-- Modal Terapias -->
+<div class="ter-modal-overlay" id="terModal" onclick="if(event.target===this)closeTerapia()">
+  <div class="ter-modal-card">
+    <button class="ter-modal-close" onclick="closeTerapia()" aria-label="Cerrar">&#x2715;</button>
+    <p class="ter-modal-num" id="terModalNum"></p>
+    <h3 class="ter-modal-name" id="terModalName"></h3>
+    <p class="ter-modal-desc" id="terModalDesc"></p>
+    <div class="ter-modal-meta">
+      <span class="ter-modal-duration" id="terModalDuration"></span>
+      <span class="ter-modal-price" id="terModalPrice"></span>
+    </div>
+    <a class="ter-modal-cta" href="https://wa.me/5491130229096" target="_blank">
+      <span data-lang="es">Consultar por WhatsApp</span><span data-lang="en" style="display:none">Book via WhatsApp</span>
+    </a>
+  </div>
+</div>
 
 <!-- 7. AGENDA -->
 <section class="agenda-wrap" id="agenda">
@@ -2293,6 +2375,24 @@ function toggleLang() {
   document.getElementById('hamburger').addEventListener('click', function() { document.getElementById('mobMenu').classList.add('open'); });
   document.getElementById('mobClose').addEventListener('click', function() { document.getElementById('mobMenu').classList.remove('open'); });
   function closeMob() { document.getElementById('mobMenu').classList.remove('open'); }
+
+  // Terapias modal
+  window.openTerapia = function(el) {
+    var lang = isEN ? 'en' : 'es';
+    var nameSpan = el.querySelector('.ter-name [data-lang="' + lang + '"]') || el.querySelector('.ter-name');
+    document.getElementById('terModalNum').textContent = el.querySelector('.ter-num').textContent.trim();
+    document.getElementById('terModalName').textContent = nameSpan ? nameSpan.textContent.trim() : '';
+    document.getElementById('terModalDesc').textContent = el.getAttribute('data-info-' + lang) || '';
+    document.getElementById('terModalDuration').textContent = el.getAttribute('data-duration') || '';
+    var priceEl = el.querySelector('.ter-price');
+    document.getElementById('terModalPrice').textContent = priceEl ? priceEl.textContent.trim() : '';
+    document.getElementById('terModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+  window.closeTerapia = function() {
+    document.getElementById('terModal').classList.remove('active');
+    document.body.style.overflow = '';
+  };
 
   // Close on ESC
   document.addEventListener('keydown', function(e) {
