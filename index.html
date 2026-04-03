@@ -1169,33 +1169,7 @@ function toggleLang() {
   });
 }
 
-function openTerapia(el) {
-  var lang = isEN ? 'en' : 'es';
-  var nameSpan = el.querySelector('.ter-name [data-lang="' + lang + '"]') || el.querySelector('.ter-name');
-  document.getElementById('terModalNum').textContent = el.querySelector('.ter-num').textContent.trim();
-  document.getElementById('terModalName').textContent = nameSpan ? nameSpan.textContent.trim() : '';
-  document.getElementById('terModalDesc').textContent = el.getAttribute('data-info-' + lang) || '';
-  document.getElementById('terModalDuration').textContent = el.getAttribute('data-duration') || '';
-  var priceEl = el.querySelector('.ter-price');
-  document.getElementById('terModalPrice').textContent = priceEl ? priceEl.textContent.trim() : '';
-  document.getElementById('terModal').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
 
-function closeTerapia() {
-  document.getElementById('terModal').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.ter-item').forEach(function(el) {
-    el.addEventListener('click', function() { openTerapia(el); });
-  });
-  var overlay = document.getElementById('terModal');
-  if (overlay) overlay.addEventListener('click', function(e) {
-    if (e.target === overlay) closeTerapia();
-  });
-});
 </script>
 
 <!-- NAV -->
@@ -2435,3 +2409,15 @@ document.addEventListener('DOMContentLoaded', function() {
     navigator.clipboard.writeText(url).then(function() {
       var o = btn.innerHTML; btn.innerHTML = '✓ Copiado!'; btn.classList.add('copied');
       setTimeout(function() { btn.innerHTML = o; btn.classList.remove('copied');
+<!-- GA4: Track WhatsApp clicks -->
+<script>
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      gtag('event', 'clic_whatsapp', {
+        'event_category': 'contacto',
+        'event_label': el.closest('[id]') ? el.closest('[id]').id : 'general'
+      });
+    });
+  });
+</script>
+<script src="terapias-modal.js"></script>
