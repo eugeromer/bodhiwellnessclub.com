@@ -2408,7 +2408,11 @@ function toggleLang() {
   function copyLink(url, btn) {
     navigator.clipboard.writeText(url).then(function() {
       var o = btn.innerHTML; btn.innerHTML = '✓ Copiado!'; btn.classList.add('copied');
-      setTimeout(function() { btn.innerHTML = o; btn.classList.remove('copied');
+      setTimeout(function() { btn.innerHTML = o; btn.classList.remove('copied'); }, 1500);
+    });
+  }
+</script>
+
 <!-- GA4: Track WhatsApp clicks -->
 <script>
   document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
@@ -2420,4 +2424,7 @@ function toggleLang() {
     });
   });
 </script>
+
 <script src="terapias-modal.js"></script>
+</body>
+</html>
